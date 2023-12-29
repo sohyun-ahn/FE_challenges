@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>떡볶이 설문지</title>
+</head>
+<body>
+    <header>
+        <h1> 나의 떡볶이 주문 </h1>
+        <p> 배달 어플 이용시, 
+            <strong style="color:red">선호하는 떡볶이의 주문 사항</strong>을 조사하는 중입니다. 
+            <br/>
+            나의 주문 사항을 기억해
+            <u>모든 항목에 빠짐없이 선택해주세요!</u> 
+        </p>
+    </header>
+    <hr/>
+    <main>
+        <form action="tteokbokki.factory" method="post">
+        <fieldset>
+            <legend>개인정보</legend>
+            <label for="nickname">닉네임</label>
+            <input type="text" id="nickname" placeholder="닉네임 입력">
+            <br/>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="이메일 입력">
+        </fieldset>
+        <br/>
+        <fieldset> 
+            <legend>설문</legend>
+
+            <h3> 떡볶이 맛 선택</h3>
+            <input type="radio" name="flavor" id="red">
+            <label for="red">기본빨간맛</label>
+            <input type="radio" name="flavor" id="rose">
+            <label for="rose">로제맛</label>
+            <input type="radio" name="flavor" id="black">
+            <label for="black">짜장맛</label>
+            <input type="radio" name="flavor" id="mara">
+            <label for="mara">마라맛</label>
+            <hr/>
+
+            <h3> 재료 선택 (다중 선택 O) </h3>
+            <input type="checkbox" name="ingredients" id="tteok">
+            <label for="tteok">떡</label>
+            <input type="checkbox" name="ingredients" id="fish">
+            <label for="fish">어묵</label>
+            <input type="checkbox" name="ingredients" id="green onion">
+            <label for="greenonion">대파</label>
+            <input type="checkbox" name="ingredients" id="egg">
+            <label for="egg">계란</label>
+            <input type="checkbox" name="ingredients" id="bacon">
+            <label for="bacon">베이컨</label>
+            <input type="checkbox" name="ingredients" id="yubu">
+            <label for="yubu">유부</label>
+            <input type="checkbox" name="ingredients" id="formara">
+            <label for="formara">분모자, 푸주</label>
+            <br>
+            <input type="checkbox" name="adds" id="adds">
+            <label for="adds">기타 (추가 재료)</label>
+             <textarea cols="40" rows="5" id="adds" placeholder="(엔터로 구분) 원하는 재료들을 입력해주세요."></textarea>
+            <hr/>
+            
+             <h3>리뷰이벤트 참여 여부</h3>
+             <select>
+                 <option>리뷰이벤트O</option>
+                 <option selected>리뷰이벤트X</option>
+             </select>
+             <br>
+        </fieldset>
+        
+        <br>
+        &nbsp;&nbsp;<input type="submit">
+        </form>
+    </main> 
+    <hr/>    
+    <footer>
+        <p>&nbsp;&nbsp;입력하시느라 수고하셨습니다. 
+            <br>
+            &nbsp;&nbsp;본 설문지는 미래 떡볶이집 사장님의 수요 조사로 활용될 예정입니다.
+        </p>
+    </footer>
+</body>
+</html>
