@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+    <title>감자농장 회원가입</title>
+    <style>
+        /*  수평 정렬 -
+                inline/inline-block 요소)
+                    - 수평으로 정렬하고 싶은 요소의 부모 요소에 text-align:center;
+                block 요소)
+                    - 정렬을 원하는 요소에 width 설정 후 margin-left,right를 auto로 설정
+        */
+        *{
+            font-family: 'Nanum Myeongjo', serif;
+            line-height: 30px;
+            text-align: center;
+            margin-top: 10px;
+
+        }
+        hr{
+            width:400px;
+        }
+        form{
+            /* box-shadow : x축 y축 blur spread color
+                             x축 : 양수일 경우 오른쪽, 음수일 경우 왼쪽 그림자 ex. 5px
+                             y축 : 양수일 경우 아래쪽, 음수일 경우 위쪽 그림자 ex. -5px
+                             blur : 그림자에 번짐효과. 값이 클수록 흐릿해짐. ex. 5px
+                             spread : 그림자의 확장효과. 양수면 크기 확장 음수면 그림자 크기 축소
+                             color : 그림자의 색
+                             inset : 그림자가 안쪽에 생김. 값은 따로 X
+            */
+            box-shadow: 10px 10px 0 3px rgb(66, 189, 132), 
+                        15px 15px 0 5px rgb(228, 193, 63),
+                        22px 22px 0 5px green,
+                        35px 30px 0 5px orangered ;
+            background-color: rgb(146, 235, 193);
+            border-width: 0;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 50px;
+            padding-right: 120px;
+            box-sizing: border-box;
+            width:500px;
+            height:500px;
+            text-align: right;
+        }
+        label{
+            text-align: left;
+            padding-right: 20px;
+        }
+        input{
+            width:200px;
+            text-align: left;
+        }
+        input.phone{
+            width:40px;
+        }
+        input.phone2{
+            width:50px;
+        }
+        button{
+            width:100px;
+        }
+        #submit{
+            font-size: 18px;
+            font-weight: 700;
+            height: 40px;
+            text-align: center;
+        }
+        select{
+            width:200px;
+            height:25px;
+        }
+        input.gender{
+            width:30px;
+            padding:0;
+        }
+        footer{
+            margin-top:0;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Growing Potatoes 회원가입</h1>
+        <hr>
+    </header>
+    <main>
+        <form id='form' action="potatoes_server.com" method="post">
+            <label for='email'>ID : </label>
+            <input id='email' name='email' type="email" placeholder="이메일을 입력하세요.">
+            <br>
+            <label for='name'>이름 : </label>
+            <input id='name' name='name' type="text" placeholder="이름을 입력하세요.">
+            <br>
+            <label for="pw">PW :</label>
+            <input id='pw' name="pw" type="password" placeholder="비밀번호를 입력하세요.">
+            <br>
+            <input name="pw2" type="password" placeholder="비밀번호를 다시 입력하세요.">
+            <br>
+            <label for="phone">연락처 : </label><input name='phone' class="phone" type="number" placeholder="010"> 
+                - <input name='phone' class="phone2" type="number" placeholder="1234"> 
+                - <input name='phone' class="phone2" type="number" placeholder="5678">
+            <br>
+            <label for='verifycode'>000000 </label><button id="verifycode">인증번호 전송</button>
+            <br>
+            <label for='verifyOK'>3:00 </label><button disabled id="verifyOK">인증완료</button>
+            <br>
+            <select name="region">
+                <option disabled selected>-지역을 선택하세요-</option>
+                <option >서울</option>
+                <option>인천</option>
+                <option>대전</option>
+                <option>대구</option>
+                <option>광주</option>
+                <option>제주</option>
+                <option>부산</option>
+                <option>울산</option>
+                <option>외 지역</option>
+            </select>
+            <br>
+
+            <input type="radio" id="female" name="gender" class="gender">
+            <label for="female">여성</label>
+            <input type="radio" id="male" name="gender" class="gender">
+            <label for="male">남성</label>
+
+            <br>
+            <input id='submit' type="submit" value="가입하기">
+        </form>
+    </main>
+    <footer>
+        &copy;Sohyun Ahn
+    </footer>
+</body>
+</html>
