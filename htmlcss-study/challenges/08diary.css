@@ -1,0 +1,61 @@
+html{
+    font-family: 'Gaegu', sans-serif;
+    font-size: 18px;
+}
+table#diary{
+    border: 3px solid;
+    text-align: center;
+    background-image: url(https://t1.daumcdn.net/cfile/tistory/9933A5385A89561920) ;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    width: 600px;
+    height: 900px;
+}
+table#title{
+    /* border-collapse : 테두리간격없애기 */
+    border: 3px solid black;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 8% auto 0;
+    box-sizing: border-box;
+}
+#title > tbody{
+    background: white;
+}
+img{
+    width: 100%;
+}
+#date{
+    width: 40%;
+}
+#title td{
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 3px solid;
+}
+#title h2{
+    text-align: center;
+    margin-bottom: 0px;
+}
+#title hr{
+    margin-top: 0;
+    width: 80%;
+    height: 1px;
+    background-color: black;
+}
+table#content{
+    width: 480px;
+    height: 320px;
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin: 0 auto 8%;
+    background-color: white;
+}
+#content td{
+    border: 2px solid;
+    height: 20px;
+}
+
