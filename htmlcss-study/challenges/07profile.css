@@ -1,0 +1,59 @@
+html{
+    height: 100%;
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+}
+header h1{
+    font-size: 45px;
+}
+main{
+    margin: auto;
+    background-color: #4287f5;
+    border: 3px solid ;
+    text-align: center;
+    width: 500px;
+    line-height: 40px;
+}
+main h1{
+    margin: 40px auto;
+    font-size: 38px;
+}
+main ul, h3{
+    padding: 5px 5px;
+    width: 70%;
+    /* margin: auto; */
+    background-color: white;
+    margin: auto;
+    box-sizing: border-box;
+}
+main ul{
+    padding-left: 13%
+}
+main li{
+    text-align: left;
+    padding-left: 15px;
+}
+hr{
+    width:80%; 
+}
+img{
+    margin-top: 30px;
+    border-radius:50%;
+    border:3px solid #4287f5;
+    width:200px;
+    height:200px;
+}
+footer h4{
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+footer p{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 13px;
+}
