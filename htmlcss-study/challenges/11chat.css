@@ -1,0 +1,75 @@
+*{
+    font-family: 'Gamja Flower', sans-serif;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+#chat_room{
+    height: 600px;
+    width: 400px;
+    border: 1px solid;
+}
+.profile{
+    flex-wrap: wrap;
+    height: 120px;
+    width: 400px;
+}
+#profile_img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url(images/울먹망곰이.png);
+    background-size: cover;
+    border-radius: 40px;
+    margin: 10px;
+}
+.profile_info{
+    width: 280px;
+    height: 120px;
+    display: inline-block;
+    float: right;
+}
+#profile_name{
+    width: 100%;
+    height: 50%;
+    padding: 25px 20px 5px;
+    margin: 0;
+
+}
+#profile_num{
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    padding: 5px 20px 20px;
+    color: rgb(83, 83, 83);
+    font-size: 20px;
+
+}
+.main_chat{
+    height: 480px;
+}
+#record_chat{
+    background-color: #9bbbd4;
+    width: 100%;
+    height: calc(100% - 100px);
+    float: bottom;
+}
+#write_chat{
+    height: 100px;
+    width: calc(100% - 100px);
+    resize: none;
+}
+#write_chat:focus{
+    outline-color: orangered;
+}
+#send{
+    position: absolute;
+    float: right;
+    height: 100px;
+    width: 100px;
+    z-index: 5;
+}
+#send:hover{
+    background-color: rgba(255, 34, 0, 0.4);
+    outline: 1px solid;
+    outline-color: rgb(255, 34, 0);
+}
