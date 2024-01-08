@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="12clonepage.css">
+    <title>애플 악세사리 페이지 클론</title>
+    <!-- Page Clone
+        : https://www.apple.com/kr/shop/accessories/all  -->
+</head>
+<body>
+    <header >
+        <nav class="header">
+            <ul class="header-menulist">
+                <li class="header-menu"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/976px-Apple_logo_black.svg.png"></li>
+                <li class="header-menu">스토어</li>
+                <li class="header-menu">Mac</li>
+                <li class="header-menu">iPad</li>
+                <li class="header-menu">iPhone</li>
+                <li class="header-menu">Watch</li>
+                <li class="header-menu">AirPods</li>
+                <li class="header-menu">TV 및 홈</li>
+                <li class="header-menu">엔터테인먼트</li>
+                <li class="header-menu">액세사리</li>
+                <li class="header-menu">고객지원</li>
+                <li class="header-menu icon"><img id="search-icon" src="images/forApplesite/search_icon.png"></li>
+                <li class="header-menu icon"><img id="shoppingbag" src="images/forApplesite/shopping_icon.png"></li>
+            </ul>
+        </nav>
+    </header> 
+    <main>
+        <div class="titlebar">
+            <p>액세서리</p>
+            <select>
+                <option value="" disabled selected hidden>모두 검색</option>
+                <option value="Mac">Mac</option>
+                <option value="iPad">iPad</option>
+                <option value="iPhone">iPhone</option>
+                <option value="Watch">Watch</option>
+                <option value="TV and Home">TV 및 홈</option>
+                <option value="Others">모든 제품</option>
+            </select>
+        </div>
+        <img src="images/forApplesite/apple_img1.png" alt="Ad. MagSafe" id="main-appleimg">
+        <div class="searchbar">
+            <p>원하는 액세서리를 찾아보세요.</p>
+            <input id="searchbar-input" type="text" rel="search" placeholder="액세서리 검색">
+        </div>
+        <div class="searchmenu">
+            <div class="searchmenu-name">
+                <p>제품별로 검색</p>
+                <p>카테고리별로 검색</p>
+            </div>
+            <hr>
+            <div class="searchmenu-icons">
+                <div><img src="images/forApplesite/Mac_icon.png" alt="Mac Img" id="Mac" class="searchmenu-icon"> </div>
+                <div><img src="images/forApplesite/iPad_icon.png" alt="iPad Img" id="iPad" class="searchmenu-icon"></div>
+                <div><img src="images/forApplesite/iPhone_icon.png" alt="iPhone Img" id="iPhone" class="searchmenu-icon"></div>
+                <div><img src="images/forApplesite/Watch_icon.png" alt="Watch Img" id="Watch" class="searchmenu-icon"></div>
+                <div><img src="images/forApplesite/TV_icon.png" alt="TV Img" id="TV" class="searchmenu-icon"></div>
+            </div>
+            <div class="searchmenu-labels">  
+                <label for="Mac" class="searchmenu-label"><u>Mac</u></label>
+                <label for="iPad" class="searchmenu-label"><u>iPad</u></label>
+                <label for="iPhone" class="searchmenu-label"><u>iPhone</u></label>
+                <label for="Watch" class="searchmenu-label"><u>Watch</u></label>
+                <label for="TV" class="searchmenu-label"><u>TV 및 홈</u></label>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer>
+        <p class="footer-tip">다양한 쇼핑 방법: <span class="blue">Apple Store를 방문</span>하거나, <span class="blue">리셀러</span>를 찾아보거나, 080-337-8877번으로 전화하세요.</p>
+        <hr>
+        <p class="footer-cp">Copyright &copy;2024 Apple Inc. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

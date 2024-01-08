@@ -1,0 +1,180 @@
+*{
+    font-family: 'Noto Sans KR', Helvetica;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    font-weight: 200;
+}
+body{
+    margin: 0;
+    height: 1000px;
+    min-width: 500px;
+}
+main{
+    width: 100%;
+}
+/* For HEADER */
+.header{
+    background-color: #f9f9fb;
+    height: 50px;
+    font-size : 16px;
+    width: 100%;
+}
+.header-menulist{
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.header-menu{
+    height: 100%;
+    margin: 0;
+    padding: 15px 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+.icon{
+    padding: 12px 0;
+}
+img#logo{
+    width: auto;
+    height: 1.1rem;
+}
+li::marker{
+    content: " ";
+}
+img#search-icon{
+    height: 1.5rem;
+}
+img#shoppingbag{
+    height: 1.5rem;
+}
+/* For TITLEBAR */
+main .titlebar{
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titlebar select{
+    font-size: 0.8rem;
+    font-weight: 300;
+    outline: none;
+    border: 0;
+}
+.titlebar select option{
+    background-color: white;
+}
+.titlebar select:hover{
+    color: #81818f;
+}
+main #main-appleimg{
+    min-width: 900px;
+    width: 100%;
+}
+/* For SEARCHBAR */
+.searchbar p {
+    margin-top: 70px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+main .searchbar #searchbar-input {
+    background-image: url(images/forApplesite/search_icon2.png);
+    background-size: 1.7rem;
+    background-position: 0.5rem center;
+    background-repeat: no-repeat;
+    padding-left: 2.4rem;
+    border: 1px solid #81818f;
+    border-radius: 10px;
+    width: 36rem;
+    height: 3.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    display: block;
+    margin: 0 auto;
+}
+/* For SEARCHMENU */
+.searchmenu{
+    font-weight: 300;
+    width: 100%;
+    margin: 0 auto;
+}
+.searchmenu-name{
+    margin: 50px auto 10px;
+    text-align: center;
+}
+.searchmenu-name p{
+    display: inline-block;
+    width: 12rem;
+}
+.searchmenu hr{
+    width: 1100px;
+    margin: 0 5rem;
+    margin: 1rem auto;
+}
+.searchmenu-icons, .searchmenu-labels{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.searchmenu-icons div{
+    margin-top: 2rem;
+    border: 1px solid darkgray;
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+    padding: 1.8rem;
+    text-align: center;
+}
+.searchmenu-icon{
+    /* icon이미지들 가운데로 가게!! */
+    height: 70%;
+    margin: 15% 0;
+}
+.searchmenu-labels{
+    margin-bottom: 2rem;
+    height: 50px;
+}
+.searchmenu-label{
+    width: 140px;
+    padding: 1rem auto 3rem;
+    text-align: center;
+    font-size: 16px;
+}
+/* For Footer */
+footer{
+    background-color: #f9f9fb;
+    height: 20%;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #76767b;
+}
+footer .footer-tip{
+    padding: 2rem 5% 0;
+}
+footer .blue{
+    text-decoration: underline;
+    color: #176ccf;
+}
+footer hr{
+    min-width: 1100px;
+    max-width: 90%
+}
+footer .footer-cp{
+    padding: 0 5% 2rem;
+}
