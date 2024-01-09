@@ -3,6 +3,11 @@
     font-size: 25px;
     box-sizing: border-box;
 }
+body{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
 #chat_room{
     height: 600px;
     width: 400px;
@@ -42,10 +47,10 @@
     font-size: 20px;
 }
 .main_chat{
+    background-color: #9bbbd4;
     height: 480px;
 }
 #record_chat{
-    background-color: #9bbbd4;
     width: 100%;
     height: calc(100% - 100px);
     float: bottom;
@@ -54,6 +59,7 @@
     height: 100px;
     width: calc(100% - 100px);
     resize: none;
+    border-radius: 5px;
 }
 #write_chat:focus{
     outline-color: orangered;
@@ -63,6 +69,7 @@
     float: right;
     height: 100px;
     width: 100px;
+    border-radius: 5px;
     z-index: 5;
 }
 #send:hover{

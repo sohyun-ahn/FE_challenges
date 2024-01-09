@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="11chat.css">
+    <link rel="stylesheet" href="15bubble.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <title>채팅방에 말풍선 만들기</title>
+</head>
+<body>
+    <div id="chat_room">
+        <section>
+            <div class="profile"> 
+                <img id="profile_img">
+                <div class="profile_info">
+                    <p id="profile_name">My love 망곰❤︎</p>
+                    <p id="profile_num">2</p>
+                </div>
+            </div>
+        </section>
+        <main>
+            <form action="store_chat" method="post" class="main_chat">
+                <div id="record_chat" class="bubbles" name="past">
+                    <ul>
+                        <li class="bubble me">망곰이!!!</li>
+                        <li class="bubble me">뭐하는 중이야?</li>
+                        <li class="bubble mylove">망곰이 코딩중</li>
+                        <li class="bubble me">열심히 하고 있어?</li>
+                        <li class="bubble me">어려운 건 뭐야?</li>
+                        <li class="bubble mylove">언제쯤 자연스럽게 잘하게 되는 걸까ㅠㅠ</li>
+                        <li class="bubble me">괜찮아 열심히 하면 할 수 있따아❤️‍🔥</li>
+                        <li class="bubble mylove">고마워♡</li>
+                        <li class="bubble me">♥♡♥</li>
+                        <li class="bubble mylove">너는 뭐해?</li>
+                        <li class="bubble me">난 떡볶이 먹어</li>
+                        <li class="bubble mylove">무슨 떡볶이?</li>
+                        <li class="bubble me">엽기떡볶이</li>
+                        <li class="bubble mylove">엽기떡볶이?? (눈반짝)</li>
+                        <li class="bubble me">YES</li>
+                        <li class="bubble mylove">OMG 당장 너희 집으로 갈게</li>
+                        <li class="bubble me" id="success">앗싸! 망곰이 부르기 성공!</li>
+                        <li class="bubble mylove">기~~다~~려~~~</li>
+                    </ul>
+                </div>
+                <textarea id="write_chat" name="now"></textarea>
+                <input type="submit" value="전송" id="send" name="send">
+            </form> 
+        </main>
+    </div>
+</body>
+</html>

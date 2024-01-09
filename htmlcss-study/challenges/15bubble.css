@@ -1,0 +1,58 @@
+main .bubbles{
+    overflow: scroll;
+}
+.bubbles ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.bubble{
+    position: relative;
+    display: inline;
+    border-radius: 8px;
+    margin: 8px 18px;
+    padding: 10px;
+    font-size: 20px;
+}
+.me{
+    margin-left: auto;
+    background-color: yellow;
+}
+.mylove{
+    margin-right: auto;
+    background-color: white;
+}
+.me::after{
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid yellow;
+}
+.mylove::after{
+    content: "";
+    position: absolute;
+    left: -10px;
+    bottom: 10px;
+    z-index: 100;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+#success:hover{
+    background-color: orange;
+    padding: 15px;
+    font-size: 25px;
+    transition: background-color 1500ms 100ms ease-out,
+            padding 1500ms 100ms ease-out,
+            font-size 1500ms 100ms ease-out;
+}
+#success:hover::after{
+    border-bottom: 10px solid orange;
+    transition: border-bottom 1500ms 100ms ease-out;
+}
