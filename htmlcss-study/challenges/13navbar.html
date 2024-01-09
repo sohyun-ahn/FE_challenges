@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HamburgerBar 만들기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .nav-bar{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .nav-bar ul{
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            height: 50px;
+            width: 100%;
+            list-style-type: none;
+            position: relative;
+        }
+        .nav-bar li{
+            background-color: black;
+            min-width: 50px;
+            color: white;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+            padding: 5px;
+            position: inherit;
+        }
+        .nav-bar .home{
+            background-color: green;
+        }
+        .nav-bar .hamburger{
+            display: none;
+        }
+        @media screen and (max-width: 550px) {
+            .nav-bar ul{
+                display: block;
+                height: 250px;
+                background-color: white;
+            }      
+            .nav-bar li{
+                display: block;
+                width: 100%;
+                visibility: hidden;
+            }      
+            .nav-bar li.hamburger{
+                display: block;
+                border: 1px solid;
+                background-color: white;
+                visibility: visible;
+            }      
+            .nav-bar li:hover ~ .menu{
+                visibility: visible;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <ul>
+            <li class="hamburger menu">🍔</li>
+            <li class="home menu">홈</li>
+            <li class="menu">소개</li>
+            <li class="menu">서비스</li>
+            <li class="menu">문의</li>
+        </ul>
+    </nav>
+</body>
+</html>
