@@ -1,0 +1,105 @@
+/* For main */
+main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    position: relative;
+}
+/* For main-about-title */
+main .main-about-title{
+    width: 100%;
+}
+main .main-about-title #about{
+    text-align: center;
+    padding-top: 3rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(197, 40, 212);
+    margin: 0;
+}
+main .main-about-title #title{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: blue;
+}
+/* For figs */
+main .figs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80rem;
+    margin: 0 auto 3rem;
+}
+main .figs figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    background-color: #8a2be2;
+    width: 250px;
+    height: 350px;
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    overflow: hidden;
+}
+main .figs figure .fig{
+    font-size: 7rem;
+}
+main .figs figure #fig-title1{
+    color: #52a7df;
+}
+main .figs figure #fig-title2{
+    color: #63ed98;
+}
+main .figs figure #fig-title3{
+    color: #ebe393;
+}
+main .figs figure .fig-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+main .figs figure a{
+/* a tag에 css 스타일 적용시
+    a:link -> :visited -> :hover -> :active 순으로 적용 */
+    text-decoration: none;
+}
+main .figs figure a:visited > *{
+    color: white;
+}
+@media screen and (max-width:768px) {
+    main .figs {
+        flex-direction: column;
+        font-size: 4vw;
+    }    
+    main .figs figure{
+        width: 60vw;
+        height: 400px;
+    }
+    main .figs figure .fig-title{
+        font-size: 5vw;
+    }
+}
+.figs:has(figure:hover){
+/* :has - 상위요소에 스타일 적용할 때
+   :not - 가지지 않은 속성에 적용할 때 */
+    & figure:not(figure:hover){
+        filter: blur(10px);
+        transform: scale(0.9);
+        transition: all 500ms 0s;
+    }
+}
+main:has(figure:hover){
+    background-color: #f5deb390;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="16ozpage_header.css">
+    <link rel="stylesheet" href="16ozpage_main-nav.css">
+    <link rel="stylesheet" href="16ozpage_main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;800&display=swap" rel="stylesheet">
+    <title>망곰's 코딩스쿨 홈페이지 만들기</title>
+    <style>
+        *{  
+            font-family: 'Noto Serif KR', serif;
+            box-sizing: border-box;
+            font-weight: 500;
+        }
+        html{
+            font-size: 16px;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-background"> 
+            <p class="top-text"><span>🥊</span> 코린이 오늘도 화이팅!! <span>👀</span></p>
+        </div>
+    </header>
+    <main>
+        <nav class="menubar">
+            <div class="menu-home">
+                <img src="images/코딩하는망곰이.jpg">
+                <p id="homename">망곰코딩</p>
+            </div>
+            <input type="checkbox" id="hamburgerbar" hidden>
+            <label for="hamburgerbar" class="hamburger">
+                <div class="hamburger-top"></div>
+                <div class="hamburger-middle"></div>
+                <div class="hamburger-bottom"></div>
+            </label>
+            <ul>
+                <li class="menu menu-school">망곰코딩 스쿨</li>
+                <li class="menu menu-html">html</li>
+                <li class="menu menu-css">css</li>
+                <li class="menu menu-curriculum">커리큘럼</li>
+                <li class="menu menu-inquery">문의사항</li>
+            </ul>
+        </nav>
+        <div class="main-about-title">
+            <p id="about">ABOUT</p>
+            <p id="title">망곰코딩스쿨</p>
+        </div>
+        <div class="figs">
+            <figure class="fig1">
+                <a href="https://ozcodingschool.com/">
+                    <div class="fig">♤</div>
+                    <p class="fig-title" id="fig-title1">빠른 강의</p>
+                    <p class="fig-description">군더더기 없는 진행으로<br>여러번의 시간을 절약합니다.</p>
+                </a>
+            </figure>
+            <figure class="fig2">
+                <div class="fig">♧</div>
+                <p class="fig-title" id="fig-title2">손쉬운 학습</p>
+                <p class="fig-description">강의 페이지를 활용해서<br>편리하게 실습할 수 있습니다.</p>
+            </figure>   
+            <figure class="fig3">
+                <div class="fig">♢</div>
+                <p class="fig-title" id="fig-title3">플레이그라운드</p>
+                <p class="fig-description">강의를 위해 제작한 도구가<br>반복학습을 도와줍니다.</p>
+            </figure>
+        </div>
+    </main>
+</body>
+</html>

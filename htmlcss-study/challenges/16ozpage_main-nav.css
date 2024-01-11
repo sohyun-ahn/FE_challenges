@@ -1,0 +1,115 @@
+/* For menubar */
+nav.menubar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(53, 162, 231);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+nav .menu-home{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: auto;
+    position: relative;
+    height: 100%;
+}
+nav .menu-home > img{
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 100%;
+}
+nav .menu-home #homename{
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    color: blue;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+nav.menubar ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: rgb(53, 162, 231);
+    color: white;
+    list-style-type: none;
+    position: relative;
+}
+nav.menubar ul li{
+    position: relative;
+    padding-right: 2rem;
+    font-size: 1.3rem;
+}
+nav.menubar ul li:hover{
+    animation: make-underline 800ms 0s forwards;
+}
+@keyframes make-underline {
+    from{
+        text-decoration: underline 5px transparent;
+    }    
+    to{
+        text-decoration: underline 5px violet;
+    }
+}
+/* For menubar hamburgerbar */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem; 
+    height: 100%;
+    padding: 1rem;
+}
+.hamburger div{ 
+    display: block;
+    width: 3.2rem;
+    height: 0.5rem;
+    border-radius: 1px;
+    background-color: black;
+    margin: auto;
+}
+@media screen and (max-width:768px) {
+    .menubar ul, li{
+        display: none;
+    }
+    .hamburger{
+        display: flex;
+    }
+    #hamburgerbar:checked + .hamburger{
+        background-color: yellowgreen;
+    }
+    #hamburgerbar:checked ~ ul{
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 20rem;
+        background-color: black;
+        position: absolute;
+        top: 5rem;
+    }
+    #hamburgerbar:checked ~ ul li{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-top: 0.5px solid darkgray;
+    }
+    #hamburgerbar:checked ~ ul li:nth-child(1){
+        border: 0;
+    }
+}
