@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="17clonemarket_header.css">
+    <link rel="stylesheet" href="17clonemarket_main.css">
+    <link rel="stylesheet" href="17clonemarket_footer.css">
+    <title>감자마켓 클론코딩</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 16px;
+            width: 100%;
+            font-family: Helvetica, sans-serif;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headerbox">
+            <div class="home">
+                <h2 class="home-name">🥔감자마켓</h2>
+            </div>
+            <nav>
+                <input type="checkbox" hidden id="hamburgerbtn">
+                <ul class="navs">
+                    <li>중고거래</li>
+                    <li>동네업체</li>
+                    <li id="highlight">알바</li>
+                    <li>부동산 직거래</li>
+                    <li>중고차 직거래</li>
+                </ul>
+                <div class="searchbtn header-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png">
+                </div>
+                <input type="text" placeholder="물품이나 동네를 검색해보세요" class="search header-icons">
+                <input type="button" value="채팅하기" class="chatbtn header-icons">
+                <label for="hamburgerbtn" class="hamburgerbtn header-icons">
+                    <div class="hamburger ham-top"></div>
+                    <div class="hamburger ham-middle"></div>
+                    <div class="hamburger ham-bottom"></div>
+                </label>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="main-ads">
+            <div class="main-ad">
+                <p class="ad-title ad">우리 동네에서 찾는<br>감자알바</p>
+                <p class="ad-description ad">걸어서 10분 거리의<br>동네 알바들 여기 다 있어요.</p>
+                <p class="ad-applybtn ad">공고 올리기</p>
+            </div>
+        </section>
+        <section class="main-content main-contents">
+            <article>
+                <div class="banner banner1">
+                    <p>배너1</p>
+                </div>
+            </article>
+            <article class="main-content1">
+                <h2>인기 감자알바</h2>
+                <div class="works">
+                    <div class="work work1">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work2">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work3">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work4">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work5">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work6">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work7">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work8">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work9">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work10">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="banner banner2">
+                    <p>배너2</p>
+                </div>
+            </article>
+            <article class="main-content2 main-contents">
+                <h2>인기 감자알바2</h2>
+                <div class="works">
+                    <div class="work work1">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work2">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work3">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work4">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work5">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work6">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work7">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div><div class="work work8">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work9">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                    <div class="work work10">
+                        <div class="work-img"></div>
+                        <div class="work-description">
+                            <p>강아지 유치원 하원 도와주실 분 구합니다.</p>
+                            <p>서울특별시 서초구 반포동</p>
+                            <p>건당 12,000</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article class="main-content main-contents">
+                <div class="banner banner3">
+                    <p>배너3</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-apps-menu">
+            <div class="footer-apps">
+                <p>감자 앱 다운로드</p>
+                <div>App Store</div>
+                <div>Google Play</div>
+            </div>
+            <div class="footer-menu">
+                <div>
+                    <p>중고거래</p>
+                    <p>동네업체</p>
+                    <p>감자알바</p>
+                    <p>부동산 직거래</p>
+                    <p>중고차 직거래</p>
+                </div>
+                <div>
+                    <p>감자비즈니스</p>
+                    <p>채팅하기</p>
+                </div>
+                <div>
+                    <p>자주 묻는 질문</p>
+                    <p>회사 소개</p>
+                    <p>인재 채용</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-infos">
+            <p><strong>대표</strong> 안소현 | <strong>사업자번호</strong> 333-11-22222</p>
+            <p><strong>직업정보제공사업 신고번호</strong> POTATO1111222</p>
+            <p><strong>주소</strong> 감자나라 감자마을 감자농부</p>
+            <p><strong>전화</strong> 010-1111-2222 | <strong>고객문의</strong> CS@potatomarket.com</p>
+            <p><strong>&copy;SohyunAhn</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

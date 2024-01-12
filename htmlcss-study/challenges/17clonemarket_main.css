@@ -1,0 +1,142 @@
+main{
+    width: 100%;
+}
+main p {
+    margin: 0;
+}
+/* main section.main-ads */
+main .main-ads{
+    width: 100%;
+    height: 315px;
+    background-color: rgb(248, 190, 54);
+}
+main .main-ad{
+    width: max-content;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: auto;
+}
+main .main-ad .ad-title{
+    width: 40rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+    padding-bottom: 1rem;
+}
+main .main-ad .ad-description{
+    width: 40rem;
+    font-size: 1.2rem;
+    font-weight: 350;
+    line-height: 1.6rem;
+    padding-bottom: 1rem;
+}
+main .main-ad .ad-applybtn{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    background-color: #f59608;
+    border-radius: 0.3rem;
+    /* display: inline; */
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+}
+/* main section.main-content (repeat) */
+main .banner{
+    background-color: #ebe393;
+    width: 48rem;
+    height: 8rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    margin: 3rem auto;
+}
+main .banner p{
+    font-weight: 500;
+    font-size: 4rem;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 4rem;
+    padding: 2rem;
+}
+main .main-contents h2{
+    font-size: 1.8rem;
+    width: 48rem;
+    text-align: left;
+    padding: 0.5rem;
+    margin: 3rem auto 1rem;
+}
+main .works{
+    width: 48rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+main .work{
+    width: 24rem;
+    height: fit-content;
+    display: flex;
+    margin: 0;
+    padding: 1rem;
+}
+main .work-img{
+    width: 7rem;
+    height: 7rem;
+    background-color: brown;
+    border-radius: 1rem;
+}
+main .work-description{
+    width: 16rem;
+    height: 7rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main .work-description p:nth-child(1){
+    font-size: 1.1rem;
+    font-weight: 400;
+    height: fit-content;
+}
+main .work .work-description p:nth-child(2){
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #303031;
+    height: fit-content;
+    margin: auto 0;
+}
+main .work-description p:nth-child(3){
+    font-size: 1rem;
+    font-weight: 500;
+    height: fit-content;
+}
+@media screen and (max-width: 768px){
+    main .works{
+        display: block;
+        width: 100vw;
+    }
+    main .work{
+        width: 100vw;
+    }
+    main .work-description{
+        width: 80%;
+    
+    }
+    main .main-ad {
+        justify-content: flex-start;
+    }
+    main .main-ad .ad-title{
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+
+    main .ad-description{
+        display: none;
+    }
+}

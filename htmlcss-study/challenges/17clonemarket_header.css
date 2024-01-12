@@ -1,0 +1,164 @@
+header{
+    width: 100%;
+    height: 4rem;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.headerbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #59595a;
+}
+header .home{
+    margin-left: 1rem;
+    width: 130px;
+}
+header .home .home-name{
+    color: #eaa51c;
+    width: inherit;
+    font-weight: 800;
+}
+/* For nav */
+header nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0 1rem;
+}
+header nav ul{
+    list-style-type: none;
+    padding-left: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+header nav ul li{
+    margin-right: 2rem;
+    font-size: 1.1rem;
+}
+header nav ul li#highlight{
+    color: #eaa51c;
+}
+/* For nav header-icons */
+header nav .searchbtn{
+    display: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+header nav .searchbtn img{
+    width: inherit;
+    height: inherit;
+}
+header nav .search{
+    width: 18rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 0.3rem;
+    padding: 1%;
+    background-color: #e8e8ea;
+    color: #5c5b58;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    font-size: inherit;
+}
+header nav .chatbtn{
+    width: 6rem;
+    height: 2.5rem;
+    border: 1px solid #e8e8ea;
+    border-radius: 0.3rem;
+    padding: 1%;
+    background-color: white;
+    font-size: inherit;
+    font-weight: 600;
+}
+header nav .hamburgerbtn{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.4rem;
+    padding: 0;
+    height: 3rem;
+    width: 3rem;
+    margin: 0 0.5rem;
+}
+header nav .hamburgerbtn .hamburger{
+    width: 1.2rem;
+    height: 1.5px;
+    border-radius: 10px;
+    background-color: black;
+}
+@media screen and (max-width: 991px){
+    header nav .search{
+        display: none;
+    }
+    header nav .searchbtn{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px){
+    header nav ul{
+        display: none;
+    }
+    header nav .chatbtn{
+        display: none;
+    }
+    header nav .hamburgerbtn{
+        display: flex;
+    }
+    #hamburgerbtn:checked + ul{
+        display: block;
+        color: inherit;
+        border-top: 1px solid #e8e8ea;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        line-height: 3rem;
+        font-weight: 400;
+        animation: appear 200ms 0s forwards ease-in;
+        background-color: white;
+    } 
+}
+@keyframes appear {
+    0%{
+        opacity: 0.2;
+        top: 1.5rem;
+    } 
+    20%{
+        opacity: 0.3;
+        top: 2rem;
+    }
+    40%{
+        opacity: 0.4;
+        top: 2.5rem;
+    }
+    60%{
+        opacity: 0.5;
+        top: 3rem;
+    }   
+    80%{
+        opacity: 0.8;
+        top: 3.5rem;
+    }
+    100%{
+        opacity: 1;
+        top: 4rem;
+    }
+}
