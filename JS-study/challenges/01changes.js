@@ -18,7 +18,6 @@ function question(n, w) {
     // 여기에서 코드 작성해주세요!
     let changes = w - 3000 * n
     return changes;
-    
 }
 
 // 여기는 결과값 함수이므로 신경쓰지 않으셔도 됩니다!
