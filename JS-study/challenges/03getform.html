@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정보 입력받고 출력하기</title>
+    <style>
+        .name{
+            color: blueviolet;
+            font-size: 35px;
+        }
+        .bye{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2><span class="name"></span>님 반갑습니다!</h2>
+    <p class="hobby"></p>
+    <p class="tv"></p>
+    <p class="food"></p>
+    <p class="bye">Goooood! 이상 나를 알아보는 시간이었습니다~</p>
+    <script>
+        const name = prompt("사용자 이름을 입력해주세요");
+        const nameElement = document.querySelector(".name")
+        nameElement.textContent = name
+
+        const hobby = prompt("취미를 입력해주세요");
+        const hobbyElement = document.querySelector(".hobby")
+        hobbyElement.textContent = `즐겨하는 취미는 ${hobby},`
+
+        const tv = prompt("즐겨보는 TV 프로그램을 입력해주세요");
+        const tvElement = document.querySelector(".tv")
+        tvElement.textContent = `즐겨보는 TV 프로그램은 ${tv},`
+
+        const food = prompt("좋아하는 음식을 입력해주세요");
+        const foodElement = document.querySelector(".food")
+        foodElement.textContent = `좋아하는 음식은 ${food}!`
+    </script>
+</body>
+</html>
