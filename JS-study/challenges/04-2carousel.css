@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+main {
+    width: max-content;
+    height: 100%;
+    margin: 20px 7%;
+    border: 10px solid rgb(247, 122, 143);
+    padding: 10px;
+    position: relative;
+}
+figure{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.figures{
+    display: flex;
+    width: fit-content;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    transition: transform 500ms;
+}
+.figures div img{
+    height: 500px;
+    width: 500px;
+}
+.btns{
+    display: flex;
+    height: max-content;
+    width: 500px;
+    justify-content: center;
+}
+button{
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16px;
+    margin: 5px;
+}
+button#like{
+    padding: 0 6px;
+}
+#like-wrapper{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    opacity: 0;
+}
+.like-animation{
+    animation: likeclick 2s 300ms ease-in;
+}
+@keyframes likeclick {
+    0%{
+        opacity: 0.3;
+    }
+    80%{
+        opacity: 1;
+        font-size: 300px;
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+footer{
+    margin : 20px auto 10px;
+    border-top: 1px solid #76767b;
+    width: 90%;
+    height: 100%;
+    padding: 10px 20px;
+}
+footer p span{
+    font-weight: 600;
+    font-size: 18px;
+}

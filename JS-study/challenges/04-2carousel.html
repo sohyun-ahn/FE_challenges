@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="04-2carousel.css">
+    <title>Carousel 구현해보기</title>
+</head>
+<body>
+    <main>
+        <figure>
+            <div class="figures">
+                <div>
+                    <img src="images/1springtowinter.jpg" alt="When spring comes, winter will come someday">
+                </div>
+                <div>
+                    <img src="images/2wintertospring.jpg" alt="But spring comes right after winter">
+                </div>
+                <div>
+                    <img src="images/3lifenotwinter.jpg" alt="Like this, Life does not last only through the cold winter">
+                </div>
+                <div>
+                    <img src="images/4somedayspring.jpg" alt="You keep in mind that someday a warm spring will definitely come to us">
+                </div>
+            </div>
+        </figure>
+        <div class="btns">
+            <button class="btn" id="first"><<</button>
+            <button class="btn" id="prev"><</button>
+            <button class="btn" id="like">🩷</button>
+            <button class="btn" id="next">></button>
+            <button class="btn" id="last">>></button>
+        </div>
+        <div id="like-wrapper">💓</div>
+    </main>
+    <footer>
+        <p><span>Reference</span> <br> &nbsp;&nbsp;&nbsp; All images from yurang_official instagram</p>
+        <h3>&copy;SohyunAhn</h3>
+    </footer>
+
+    <script>
+        const prevbtn = document.querySelector("#prev");
+        const nextbtn = document.querySelector("#next");
+        const firstbtn = document.querySelector("#first");
+        const lastbtn = document.querySelector("#last");
+        const figure = document.querySelector(".figures");
+        const likebtn = document.querySelector("#like");
+        const likeWrapper = document.querySelector("#like-wrapper")
+
+        let i = 0;
+        let changeX = 0;
+        prevbtn.onclick = function() {translate(-1)}
+        nextbtn.onclick = function() {translate(1)}
+        firstbtn.onclick = function() {translate(0)}
+        lastbtn.onclick = function() {translate(3)}
+        likebtn.onclick = function() {
+            // Disable the button to prevent multiple clicks
+            likebtn.disabled = true;
+
+            // Add the loading animation CSS class
+            likeWrapper.classList.add("like-animation")
+
+            // Simulate an asynchronous task (replace this with your actual task)
+            setTimeout(() => {
+            // Re-enable the button
+            likebtn.disabled = false;
+
+            // Remove the loading animation CSS class
+            likeWrapper.classList.remove("like-animation");
+            }, 2300); // Simulated 2300milli-second task
+        }
+        
+        function translate(i){
+            changeX += 500*i;
+            if (changeX >= 2000 && i > 0){
+                changeX = 1500;
+            }
+            else if (changeX <= -500 && i < 0) {
+                changeX = 0;
+            }
+            else if (i == 0){
+                changeX = 0
+            }
+            figure.style.transform = `translateX(-${changeX}px)`
+        }
+    </script>
+</body>
+</html>
