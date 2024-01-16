@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4의 배수 출력 (while문 사용)</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const title = document.querySelector('h1')
+        title.textContent = "4의 배수 5개씩 출력하기"
+
+        let i = 100
+        let j = 0
+        while (i<=500){
+            if (i%4 == 0){
+                document.write(`${i} `)
+                j++
+            }
+            if (j==5){
+                document.write('<br>')
+                j = 0
+            }
+            i++
+        }
+    </script>
+</body>
+</html>

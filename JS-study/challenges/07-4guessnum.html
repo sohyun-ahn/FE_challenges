@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스테리 숫자 맞추기</title>
+    <style>
+        *{
+            text-align: center;
+            color: white;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(44, 44, 44);
+            font-size: 1rem;
+        }
+        main{
+            margin: 2rem;
+        }
+        main p:nth-child(1){
+            font-weight: 500;
+        }
+        main div{
+            display: flex;
+            align-items: center;
+            width: 450px;
+            height: 4rem;
+            margin: 0 auto;
+        }
+        .wrapper{
+            position: relative;
+            width: fit-content;
+            overflow: hidden;
+            height: 3rem;
+            margin: 2rem auto;
+        }
+        .guess-num{
+            width: 250px;
+            height: 3rem;
+            border-radius: 6px;
+            margin-right: auto;
+            color: black;
+            font-size: 2rem;
+        }
+        .btn{
+            width: 150px;
+            height: 3rem;
+            background-color: transparent;
+        }
+        .guess-btn{
+            color: rgb(255, 111, 0);
+            border: 2px solid rgb(255, 111, 0);
+            border-radius: 6px;
+        }
+        .guess-btn:hover{
+            box-shadow: 0 10px 10px -5px rgb(255, 214, 64);
+            zoom: 120%;
+        }
+        .restart-btn{
+            border: 4px solid aqua;
+            display: none;
+        }
+        .wrapper::before, .wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: aqua;
+            z-index: -1;
+        } 
+        @keyframes fillwithbubbles {
+            0%{
+                width: 60px;
+                height: 60px;
+                top: -50px;
+                left: -50px;
+                border-radius: 100%;
+            }
+            40%{
+                width: 80px;
+                height: 80px;
+                top: -30px;
+                left: -20px;
+                border-radius: 100%;
+            }
+            70%{
+                width: 120px;
+                height: 120px;
+                top: -30px;
+                left: -20px;
+                border-radius: 100%;
+            }
+            100%{
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                top: 0;
+                left: 0;
+            }
+        }
+        @keyframes fillwithbubbles2 {
+            0%{
+                width: 100px;
+                height: 100px;
+                top: 10px;
+                left: -50px;    
+                border-radius: 100%;
+            }
+            30%{
+                width: 100px;
+                height: 100px;
+                top: 10px;
+                left: -30px;    
+                border-radius: 100%;
+            }
+            50%{
+                width: 140px;
+                height: 140px;
+                border-radius: 100%;
+                top: 10px;
+                left: -30px; 
+            }
+            90%{
+                width: 170px;
+                height: 170px;
+                border-radius: 100%;
+                top: 10px;
+                left: -30px; 
+            }
+            100%{
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                top: 0;
+                left: 0;
+            }
+        }
+        .wrapper:has(.restart-btn:hover)::before{
+            animation: fillwithbubbles 800ms 0.3s ease-in forwards;
+        }
+        .wrapper:has(.restart-btn:hover)::after{
+            animation: fillwithbubbles2 800ms 0s ease-in forwards;
+        }        
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <main>
+        <p>1부터 100까지의 숫자를 입력하세요!</p>
+        <div>
+            <input type="number" class="guess-num">
+            <input type="button" class="guess-btn btn" value="뚜둥!">
+        </div>
+        <div class="wrapper"><input type="button" class="btn restart-btn" value="다시하기"></div>
+    </main>
+
+    <script>
+        const h1 = document.querySelector('h1')
+        h1.textContent = "Mystery Number 맞추기"
+        h1.style.margin = "3rem"
+        h1.style.fontSize = "3rem"
+
+        mysteryNum = Math.floor(Math.random()*100+1)
+        const guessNum = document.querySelector('.guess-num')
+        const guessBtn = document.querySelector('.guess-btn')
+        const wrapper = document.querySelector('.wrapper')
+        const restartBtn = document.querySelector('.restart-btn')
+        const p = document.createElement('p')
+        wrapper.append(p)
+
+        guessBtn.addEventListener('click', ()=>{
+            if (guessNum.value < 1 || guessNum.value > 100){
+                alert("1부터 100까지 중 숫자를 입력하세요!")
+                p.style.visibility = 'hidden'
+            }else{
+                p.style.visibility = 'visible'
+                console.log(guessNum.value)
+                console.log(mysteryNum)
+                
+                if (guessNum.value < mysteryNum){
+                    p.textContent = "힌트 : 숫자가 너무 작아요! 조금 더 높여보세요!"
+                }else if (guessNum.value > mysteryNum){
+                    p.textContent = "힌트 : 숫자가 너무 커요! 줄여볼까요??"
+                }else{
+                    alert(`정답은 ${mysteryNum}! 정답입니다👏👏👏 잘 찍었네요~😜`)
+                    p.textContent = null
+                    restartBtn.style.display = 'block'
+                }
+            }
+            guessNum.value = null;
+        })
+        restartBtn.addEventListener('click', function(){
+            location.reload()
+        })
+    </script>
+</body>
+</html>

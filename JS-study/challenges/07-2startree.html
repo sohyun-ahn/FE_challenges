@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 트리 찍기 (for문 사용)</title>
+</head>
+<body>
+    <h1>별 트리 찍기</h1>
+    <div>1번 별</div>
+    <div>2번 별</div>
+    <div>3번 별</div>
+
+    <script>
+        const div = document.querySelectorAll('div')
+        
+        // For 1번 별
+        for (let i=0; i<5; i++){
+            let stars = "*".repeat(i+1)
+            const p = document.createElement('p')
+            p.textContent = `${stars}`
+            div[0].append(p)
+        }
+
+        // For 2번 별
+        for (let i=0; i<5; i++){
+            let stars = "*".repeat(i+1)
+            const p = document.createElement('p')
+            const p2 = document.createElement('p')
+            p.textContent = `${stars}`
+            p2.textContent = `${stars}`
+            if (i==0){
+                div[1].append(p)
+            }else{
+                div[1].querySelectorAll('p')[i-1].append(p)
+            }
+            p.after(p2)
+        }
+
+        //For 3번 별 
+        //  JS에서 공백 유니코드 : '\u00A0'
+        for (let i=0, j=4; i<5; i++,j--){
+            let stars = "*".repeat(2*i+1)
+            let space = '\u00A0'.repeat(j)
+            const p = document.createElement('p')
+            const p2 = document.createElement('p')
+            p.textContent = `${space}${stars}`
+            p2.textContent = `${space}${stars}`
+
+            if (i==0){
+                div[2].append(p)
+            }else {
+                div[2].querySelectorAll('p')[i].before(p)
+            }
+
+            if (j==0){
+                continue;
+            }else{
+                p.after(p2)
+            }
+        }
+
+        // 유진영 강사님 풀이 - 중첩 반복문
+        // for(let i=0; i<5; i++){
+        //     let stars = ""
+        //     for(let j=0; j<=i;j++){
+        //         stars += "*"
+        //     }
+        //     console.log(stars)
+        // }
+        /*
+        // 1번 별
+        for (i = 0; i < 5; i++) {
+        let stars = "";
+
+        for (j = 0; j <= i; j++) {
+            stars += "*";
+        }
+
+        console.log(stars);
+        }
+
+        // 2번 별
+        for (i = 0; i < 5; i++) {
+        let stars = "";
+
+        for (j = 0; j <= i; j++) {
+            stars += "*";
+        }
+
+        console.log(stars);
+        }
+        for (i = 4; i >= 0; i--) {
+        let stars = "";
+
+        for (j = 0; j <= i; j++) {
+            stars += "*";
+        }
+
+        console.log(stars);
+        }
+
+        // // 3번 별
+        for (i = 0; i < 5; i++) {
+        let stars = "";
+
+        for (j = 5; j > i; j--) {
+            stars += " ";
+        }
+        for (k = 0; k < 2 * i + 1; k++) {
+            stars += "*";
+        }
+        console.log(stars);
+        }
+        for (i = 5; i >= 0; i--) {
+        let stars = "";
+
+        for (j = 5; j > i; j--) {
+            stars += " ";
+        }
+        for (k = 0; k < 2 * i + 1; k++) {
+            stars += "*";
+        }
+        console.log(stars);
+        }
+        */
+    </script>
+</body>
+</html>
