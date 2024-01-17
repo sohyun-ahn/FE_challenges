@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+main table{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    width: 480px;
+    height: 480px;
+    border: 2px solid skyblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px 0 darkgray;
+}
+main table thead{
+    width: 95%;
+    height: 25%; 
+    margin: 1.2rem auto 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main table tbody{
+    width: 95%;
+    height: 75%;
+    margin: 0.3rem auto 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 0.2rem;
+}
+main table thead tr{
+    width: 100%;
+    height: 100%;
+}
+main table thead th{
+    border-radius: 0.6rem;
+    border: 1px solid;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: inherit;
+    font-size: 3.2rem;
+    word-break: break-all;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    text-align: right;
+}
+main table tbody tr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 23%;
+    row-gap: 0.5rem;
+}
+main table tbody td{
+    width: 24%;
+    height: 100%;
+    border: 1px solid;
+    border-radius: 0.6rem;
+    background-color: rgb(247, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
