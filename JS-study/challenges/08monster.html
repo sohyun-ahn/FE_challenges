@@ -21,20 +21,19 @@
 
         if (confirm("몬스터잡기 게임을 시작하시겠습니까?")){
             h1.textContent = '몬스터😈 잡기 게임을 시작합니다!'
+
             let monsterHP = parseInt(prompt("몬스터의 HP(생명력)은? (양의 정수)"))
-            console.log(monsterHP)
             while(monsterHP<0 || isNaN(monsterHP)){
                 alert("양의 정수를 입력하십시오!!")
                 monsterHP = parseInt(prompt("몬스터의 HP(생명력)은? (양의 정수)"))
-                console.log(monsterHP)
             }
-            console.log(monsterHP)
+
             let attackDamage = parseInt(prompt("1회 공격시 Damage(데미지)는? (양의 정수)"))
             while(attackDamage<0 || isNaN(attackDamage)){
                 alert("양의 정수를 입력하십시오!!")
                 attackDamage = parseInt(prompt("1회 공격시 Damage(데미지)는? (양의 정수)"))
             }
-            
+
             const attackCount = killMonster(monsterHP, attackDamage)
             statusBox.style.marginBottom = '1rem'
             resultBox.style.display = 'inline-block'
@@ -43,8 +42,7 @@
             resultBox.style.fontWeight = '900'
             resultBox.style.fontSize = '1.5rem'
             resultBox.style.padding = '1rem'
-            resultBox.textContent = `총 ${attackCount}회 공격으로 몬스터👿가 가졌던 ${monsterHP}HP에서 0HP을 완성했습니다!!`
-
+            resultBox.textContent = `총 ${attackCount}회 공격으로 몬스터👿가 가졌던 ${monsterHP}HP에서 0HP을 완성했습니다!!`       
         }else {
             h1.textContent = '몬스터잡기 게임을 하지 않습니다.'
         }
