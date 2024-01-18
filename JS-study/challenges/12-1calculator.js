@@ -1,9 +1,7 @@
 const td = document.querySelectorAll('td')
-const exscreen = document.querySelector('.exscreen')
-const nums = document.querySelectorAll('.num')
-const opers = document.querySelectorAll('.operator')
 const c = document.querySelector('.cancel')
 const equal = document.querySelector('.equal')
+const exscreen = document.querySelector('.exscreen')
 
 let expression;
 let numArr;
@@ -28,11 +26,13 @@ for (let i=0;i<td.length;i++){
     td[i].addEventListener('click', function(event){ 
         expression = makeExpression(event)
         if (expression != undefined){  // '=' 클릭 후, expression에  결과가 생겼으면,
+            expressionTemp = []        // 임시 expression은 초기화
             arrsNumAndOper = isNumOrisOper(expression)
             numArr = arrsNumAndOper[0]
             operArr = arrsNumAndOper[1]
             result = parseInt(evaluate(numArr, operArr))
             exscreen.textContent = result
+            expressionTemp.push(result)  // result 가지고 operator 버튼 클릭해도 연속으로 수식만들기
         }
     })
 }
