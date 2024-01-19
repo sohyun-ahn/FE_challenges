@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you want ICECREAM?</title>
+</head>
+<body>
+    <script>
+        const addBtn = document.createElement('button')
+        const checkBtn = document.createElement('button')
+        const printListBtn = document.createElement('button')
+        const h2 = document.createElement('h2')
+        const ul = document.createElement('ul')
+        document.body.append(addBtn, checkBtn, printListBtn, h2, ul)
+
+        addBtn.textContent = '아이스크림 이름 추가'
+        checkBtn.textContent = '아이스크림 이름 확인'
+        printListBtn.textContent = '입력한 아이스크림 목록 출력'
+        h2.textContent = `입력한 아이스크림🍦 목록: `
+        ul.style.width = '200px'
+        ul.style.fontSize = '1.5rem'
+        ul.style.listStyle = '-'
+        ul.style.backgroundColor = '#fffac7'
+        addBtn.style.marginRight = '0.5rem'
+        checkBtn.style.marginRight = '0.5rem'
+
+        let icecreamList = []
+        addBtn.addEventListener('click', function(){
+            const icecream = prompt('추가하고 싶은 아이스크림의 이름을 입력해주세요.')
+            if (icecream!==null && icecreamList.indexOf(icecream)==-1){
+                icecreamList.push(icecream)
+            }
+        })
+        checkBtn.addEventListener('click', function(){
+            if (icecreamList.length>0){
+                icecreamList.forEach(icecream =>{
+                alert(icecream)
+                })
+            }
+        })
+        printListBtn.addEventListener('click', function(){
+            if (icecreamList.length>0){
+                ul.textContent = ''
+                ul.style.border = '1px solid'
+                icecreamList.forEach(icecream =>{
+                    const li = document.createElement('li')
+                    ul.append(li)
+                    li.textContent = icecream
+                    li.style.padding = '0.5rem'
+                })
+            }
+        })
+    </script>
+</body>
+</html>

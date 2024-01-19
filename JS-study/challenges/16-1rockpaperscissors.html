@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        const h1 = document.createElement('h1')
+        const p = document.createElement('p')
+        const div = document.createElement('div')
+        const input = document.createElement('input')
+        const btn = document.createElement('button')
+        const pResult = document.createElement('p')
+        document.body.append(h1, p, div, pResult)
+        div.append(input, btn)
+        h1.textContent = '가위바위보 게임'
+        p.textContent = '가위, 바위, 보 중 하나를 입력하세요:'
+        input.style.marginRight = '1rem'
+        btn.textContent = '결과 확인'
+
+        const inputList = ['가위', '바위', '보']
+
+        btn.addEventListener('click', function(){
+            if(inputList.indexOf(input.value) != -1){
+                const userInput = input.value
+                const computerInput = inputList[Math.floor(Math.random()*3)]
+                result = rockPaperScissors(userInput, computerInput)
+                pResult.textContent = `당신의 선택: ${userInput} / 컴퓨터의 선택: ${computerInput} / 결과: ${result}!`
+            }else{
+                alert('가위 또는 바위 또는 보 중에 하나만 정확히 입력하세요!')
+                location.reload()
+            }
+        })
+        
+        function rockPaperScissors(user, computer){
+            const win = ['보바위','가위보', '바위가위']
+            if (user===computer){
+                result = '비겼습니다'
+            }else if (win.indexOf(user+computer)!=-1){
+                result = '이겼습니다'
+            }else{
+                result = '졌습니다'
+            }
+            return result
+        }
+    </script>
+</body>
+</html>
