@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <style>
+        body{
+            padding-left: 1rem;
+        }
+        button {
+            width: 2rem;
+            font-size: 1.3rem;
+            margin-right: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const h1 = document.createElement('h1')
+        const p = document.createElement('p')
+        const restartBtn = document.createElement('button')
+        const stopBtn = document.createElement('button')
+        document.body.append(h1,p,restartBtn,stopBtn)
+
+        h1.textContent = '⏰스톱워치⏰'
+        p.style.paddingLeft = '0.5rem'
+        p.textContent = '0:0:0'
+        restartBtn.textContent = '⏯'
+        stopBtn.textContent = '⏹'
+        
+        function StopWatch(tag) {
+            this.startTime = 0
+            this.endTime = 0
+            this.elapsedTime = 0
+            this.isRunning = false
+            this.pause = false
+            this.timer;
+            this.tag = tag
+            this.start = function(){ 
+                if (this.isRunning==true){
+                    if (this.endTime!==0){
+                        this.elapsedTime = this.endTime
+                        this.startTime = this.endTime
+                        this.countTime()
+                        this.pause = true
+                    }else{
+                        this.countTime()
+                        this.pause = true
+                    }
+                }
+            }
+            this.stop = function(){
+                clearInterval(this.timer)
+                if(this.isRunning==false){
+                    this.startTime = 0;
+                    this.endTime = 0;
+                    this.elapsedTime = 0;
+                }
+                this.printElapsedTime()
+                this.pause = false
+            }
+            this.countTime = function(){
+                this.timer = setInterval(()=>{
+                    this.elapsedTime += 1
+                    this.printElapsedTime()
+                    this.endTime = this.elapsedTime
+                },1000)
+            }
+            this.printElapsedTime = function(){
+                elapsedTime_m = Math.floor(this.elapsedTime/1000/60)
+                elapsedTime_s = Math.floor(this.elapsedTime/1000%60)
+                elapsedTime_ms = this.elapsedTime%1000
+                elapsedTime_text = `${elapsedTime_m}:${elapsedTime_s}:${elapsedTime_ms}`
+                this.tag.textContent = elapsedTime_text
+            }
+        }
+        
+        const stopWatch = new StopWatch(p)
+        
+        restartBtn.addEventListener('click', function(e){
+            stopWatch.isRunning = true;    
+            if (stopWatch.pause){
+                stopWatch.stop()
+            }else{
+                stopWatch.start()
+            }
+        }) 
+        stopBtn.addEventListener('click', function(e){
+            stopWatch.isRunning = false;
+            stopWatch.stop()
+        }) 
+    </script>
+</body>
+</html>

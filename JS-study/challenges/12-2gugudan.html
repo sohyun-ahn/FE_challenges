@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단을 외우자!</title>
+</head>
+<body>
+    <script>
+        const h1 = document.createElement('h1')
+        const h3 = document.createElement('h3')
+        const table = document.createElement('table')
+        const thead = document.createElement('thead')
+        const tbody = document.createElement('tbody')
+        const tr = document.createElement('tr')
+        const tr2 = document.createElement('tr')
+
+        document.body.append(h1)
+        document.body.append(h3)
+        document.body.append(table)
+        table.append(thead, tbody)
+        thead.append(tr)
+        tbody.append(tr2)
+        
+        document.body.style.padding = '1rem'
+        table.style.textAlign = 'center'
+        table.border = '1px solid solid'
+        table.style.width = '40rem'
+        table.style.height = 'fit-content'
+
+        h1.textContent = '구구단 표'
+        h3.textContent = '2단~9단을 만들어 보세요!'
+
+        for (let m=2;m<=9;m++){
+            const th = document.createElement('th')
+            const td = document.createElement('td')
+            let gugudan = [];
+
+            for (let n=1;n<=9;n++){
+               gugudan.push(`${m} * ${n} = ${m * n}<br>`)
+            }
+            th.textContent = `${m}단`
+            td.innerHTML = gugudan.join('')
+            tr.append(th)
+            tr2.append(td)
+        }
+    </script>
+</body>
+</html>

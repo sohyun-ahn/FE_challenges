@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>today date</title>
+</head>
+<body>
+    <script>
+        const h1Now = document.createElement('h1')
+        const h1Remain = document.createElement('h1')
+        document.body.append(h1Now,h1Remain)
+        h1Remain.style.background = 'yellow'
+        h1Remain.style.display = 'inline'
+
+        setInterval(()=>{
+            const nowDate = new Date()
+            const lastDate = new Date(2024,11,31,23,59,59,999)
+            const remainTime = (lastDate - nowDate)
+            const remainTime_days = remainTime / 1000 / 60 / 60 / 24
+            const remainTime_day = Math.floor(remainTime_days)
+            const remainTime_hours = (remainTime_days%1)*24
+            const remainTime_hour =  Math.floor(remainTime_hours)
+            const remainTime_mins = (remainTime_hours%1)*60
+            const remainTime_min =  Math.floor(remainTime_mins)
+            const remainTime_secs = (remainTime_mins%1)*60
+            const remainTime_sec =  Math.floor(remainTime_secs)
+            const remainDate = `${remainTime_day}일 ${remainTime_hour}시간 ${remainTime_min}분 ${remainTime_sec}초`
+            h1Now.textContent = `현재 날짜와 시간: ${nowDate}`
+            h1Remain.textContent = `올해의 남은 시간: ${remainDate} 남았습니다.`
+        }, 1000)
+
+        // -- 다른 방법 --
+        // const options = {
+        //     // 참고) date format : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat 
+        //     weekday: "short",
+        //     year: "numeric",
+        //     month: "short",
+        //     day: "numeric",
+        //     hour: "numeric",
+        //     minute: "numeric",
+        //     second: "numeric",
+        //     hour12: false,
+        //     timeZone :'Asia/Seoul',
+        //     timeZoneName : 'longOffset',
+        // };
+        // const localTime_en = nowDate.toLocaleString('en-us', options).split(',').join(' ')
+        // const localTime_ko = nowDate.toLocaleString('ko', {timeZoneName : 'long'})
+        // const timeZoneName = localTime_ko.substring(localTime_ko.length-6)
+        // h1Now.textContent = `현재 날짜와 시간: ${localTime_en} (${timeZoneName})`
+    </script>
+</body>
+</html>
