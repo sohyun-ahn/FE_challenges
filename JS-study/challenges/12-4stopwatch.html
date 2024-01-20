@@ -35,8 +35,30 @@
             this.elapsedTime = 0
             this.isRunning = false
             this.pause = false
-            this.timer;
+            this.timer = []
             this.tag = tag
+            
+            // setInterval 함수는 시간을 10ms 이상의 단위로 지정해줘야한다고 한다. 
+            // 10ms로 +10하면 되지만, 
+            // 1ms로 +1하는 것으로 보이기 위해, 10ms단위로  +1을 하는 함수 10개를 만들었다.
+            this.countTime = function(){
+                for (let i=0;i<10;i++){
+                    this.timer[i] = setInterval(()=>{
+                        this.elapsedTime += 1
+                        this.printElapsedTime()
+                        this.endTime = this.elapsedTime
+                    }, 10) 
+                }         
+            }
+
+            this.printElapsedTime = function(){
+                elapsedTime_m = Math.floor(this.elapsedTime/1000/60)
+                elapsedTime_s = Math.floor(this.elapsedTime/1000%60)
+                elapsedTime_ms = this.elapsedTime%1000
+                elapsedTime_text = `${elapsedTime_m}:${elapsedTime_s}:${elapsedTime_ms}`
+                this.tag.textContent = elapsedTime_text
+            }
+
             this.start = function(){ 
                 if (this.isRunning==true){
                     if (this.endTime!==0){
@@ -50,8 +72,12 @@
                     }
                 }
             }
+
             this.stop = function(){
-                clearInterval(this.timer)
+                for(let i=0;i<this.timer.length;i++){
+                    clearInterval(this.timer[i])
+                }
+                
                 if(this.isRunning==false){
                     this.startTime = 0;
                     this.endTime = 0;
@@ -59,20 +85,6 @@
                 }
                 this.printElapsedTime()
                 this.pause = false
-            }
-            this.countTime = function(){
-                this.timer = setInterval(()=>{
-                    this.elapsedTime += 1
-                    this.printElapsedTime()
-                    this.endTime = this.elapsedTime
-                },1000)
-            }
-            this.printElapsedTime = function(){
-                elapsedTime_m = Math.floor(this.elapsedTime/1000/60)
-                elapsedTime_s = Math.floor(this.elapsedTime/1000%60)
-                elapsedTime_ms = this.elapsedTime%1000
-                elapsedTime_text = `${elapsedTime_m}:${elapsedTime_s}:${elapsedTime_ms}`
-                this.tag.textContent = elapsedTime_text
             }
         }
         
@@ -86,6 +98,7 @@
                 stopWatch.start()
             }
         }) 
+        
         stopBtn.addEventListener('click', function(e){
             stopWatch.isRunning = false;
             stopWatch.stop()
