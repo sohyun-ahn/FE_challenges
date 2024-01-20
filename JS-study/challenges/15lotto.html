@@ -25,15 +25,15 @@
         const h1 = document.createElement('h1')
         const div = document.createElement('div')
         const lottoBtn = document.createElement('button')
-        const stopBtn = document.createElement('button')
+        const resetBtn = document.createElement('button')
         const date = new Date().toLocaleDateString("ko").split('.')
-        document.body.append(h1,div,lottoBtn,stopBtn)
+        document.body.append(h1,div,lottoBtn,resetBtn)
         h1.textContent = `${date[0]}년 ${date[1]}월 ${date[2]}일 로또 번호 추첨`
         div.style.height = '4rem'
         div.style.display = 'flex'
         lottoBtn.textContent = '로또추첨'
         lottoBtn.style.marginRight = '1rem'
-        stopBtn.textContent = '처음으로'
+        resetBtn.textContent = '처음으로'
         
         function drawLotto(){
             let lotto = [];
@@ -45,8 +45,9 @@
             }
             return lotto
         }
+
         function printLottoOnScreen(lottoArr, whereBox){
-            div.textContent = ''
+            whereBox.textContent = ''
             palette = ['red', 'orange', 'green', 'skyblue', 'violet', 'navy']
             lottoArr.forEach((lotto,i)=>{
                 const box = document.createElement('div')
@@ -56,11 +57,13 @@
                 box.textContent = lotto
             })
         }
+
         lottoBtn.addEventListener('click', function(){
             lotto = drawLotto()
             printLottoOnScreen(lotto, div)
         })
-        stopBtn.addEventListener('click', function(){
+
+        resetBtn.addEventListener('click', function(){
             div.textContent = ''
         })
     </script>
