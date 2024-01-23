@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+    <style>
+        table, table *{
+            border : 1px solid;
+        }
+        table{
+            width: 400px;
+            font-size: 20px;
+            text-align: center;
+        }
+        p{
+            font-size: 30px;
+            font-weight: 700;
+        }
+        span{
+            font-size: inherit;
+            background-color: yellow;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const h1 = document.createElement('h1')
+        const table = document.createElement('table')
+        const thead = document.createElement('thead')
+        const tbody = document.createElement('tbody')
+        const p = document.createElement('p')
+        const span = document.createElement('span')
+        const cats = ['이름', '점수']
+        const names = ['짱구','맹구','철수','훈이','유리','수지']
+        const scores = randomScore(6)
+        h1.textContent = '떡잎 유치원 멀리뛰기 결과'
+        h1.style.fontSize = '43px'
+        p.textContent = '75점이 넘는 사람 : '
+        document.body.append(h1,table,p)
+        table.append(thead,tbody)
+        p.append(span)
+
+        makeTable()
+        findUp75()
+
+        function randomScore(num){
+            let scores = []
+            for (let n=0;n<num;n++){
+                scores.push(Math.floor(Math.random()*100+1))
+            }
+            return scores
+        }
+
+        function findUp75(){
+            let namesUp75 = []
+            scores.forEach(function(score, i) {
+                if(score>=75){
+                    namesUp75.push(names[i])
+                    const row = tbody.querySelector(`tr:nth-child(${i+1})`)
+                    row.style.background = 'yellow'
+                }
+            })
+            span.textContent = namesUp75
+        }
+
+        function makeTable(){
+            // thead
+            const tr = document.createElement('tr')
+            thead.append(tr)
+            for(let c=0;c<2;c++){
+                const th = document.createElement('th')
+                th.textContent = cats[c]
+                tr.append(th)
+            }
+            // tbody
+            for(let r=0;r<6;r++){
+                const tr = document.createElement('tr')
+                const td = document.createElement('td')
+                const td2 = document.createElement('td')
+                td.textContent = names[r]
+                td2.textContent = scores[r]
+                tr.append(td, td2)
+                tbody.append(tr)
+            }
+        }       
+    </script>
+</body>
+</html>
