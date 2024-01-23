@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            font-size: 40px;
+            margin: 10px;
+            display: inline-block;
+            min-width: 40%;
+            text-align: center;
+        }
+        .day{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 40%;
+        }
+        fieldset{
+            display: block;
+            min-width: 40%;
+            padding: 0;
+            min-height: 150px;
+            margin: 10px;
+        }
+        ul{
+            margin: 0;
+            padding: 2% 10%;
+            display: flex;
+            flex-direction: column;
+        }
+        li{
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            margin: 2px 0;
+            padding: 5px 0 5px 5px;
+            height: 25px;
+            border: 1px solid;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff26e;
+        }
+        .done{
+            background-color: #e8e8ea;
+            color: #76767b;
+        }
+        span{
+            background-color: #9eeb93;
+            margin-left: 10px;
+            padding: 3px;
+            height: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="todolist">
+        <h1>TO DO LIST</h1>
+        <div class="day">
+            <fieldset>
+                <legend>In the Morning</legend>
+                <ul class="morning">
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>In the Afternoon</legend>
+                <ul class="afternoon">
+                </ul>
+            </fieldset>
+        </div>
+        <input type="text" class="input-text" placeholder="What To Do..." autocomplete="off">
+        <select class="when">
+            <option value="morning">in the morning</option>
+            <option value="afternoon">in the afternoon</option>
+        </select>
+        <input type="button" class="add-btn" value="추가"> 
+    </div>
+
+    <script>
+        const addBtn = document.querySelector('.add-btn')
+        const task = document.querySelector('input')
+        const timeToTask = document.querySelector('select')
+        let todoList = []
+
+        getTodoList() // localStorage에 저장된 것이 있을 경우 불러오기
+
+        addBtn.addEventListener('click', function(){
+            todo = addTodo(timeToTask, task)
+            storeTodoList()
+            displayTodo(todo)
+            task.value = ''
+        })
+
+        // localStorage에 저장된 것이 있을 경우 불러오기
+        function getTodoList(){
+            if(localStorage.length!=0){
+                JSON.parse(localStorage.getItem("todoList")).forEach(item => {
+                    displayTodo(item)
+                }); 
+            }
+        }
+
+        // localStorage에 key: todoList 로 저장
+        function storeTodoList(){
+            localStorage.setItem("todoList", JSON.stringify(todoList))  // 로컬저장소에 추가
+        }    
+            
+        // myToDo객체로 만들어 toDoList 추가
+        function addTodo(whenTodo, whatTodo){
+            const myTodo = {
+                what : whatTodo.value,
+                when : whenTodo.value,
+                id: new Date().getTime(),
+                done: false
+            } 
+            todoList.push(myTodo)
+            return myTodo
+        }
+
+        // 화면에 요소 표시
+        function displayTodo(todo){
+            const list = document.createElement('li')
+            document.querySelector(`.${todo.when}`).append(list)      
+            list.textContent = todo.what
+
+            // del버튼 만들기
+            const delBtn = document.createElement('span')
+            delBtn.textContent = 'x'
+            list.append(delBtn)   
+            delBtn.addEventListener('click', function(){
+                list.style.display = 'none'
+                todoList = todoList.filter(item => item != todo) // todoList Update
+                storeTodoList() // localStorage Update           
+            })
+
+            // 할 일 완료하는 버튼 추가
+            list.addEventListener('click', function(){
+                todo.done = !todo.done
+                list.classList.toggle('done')
+                storeTodoList() // localStorage Update           
+            })
+        }
+    </script>
+</body>
+</html>
