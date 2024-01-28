@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    margin : 0;
+}
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(134, 249, 249);
+    height: 70px;
+}
+header *{
+    margin: 30px;
+    height: 2rem;
+    color: #505050;
+}
+header #input{
+    width: 10rem;
+    color: black;
+    padding-left: 0.5rem;
+    margin-right: 0;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #505050;
+    border-right: 0;
+}
+input:focus{
+    outline: 2px solid #f7ea5f;
+    outline-offset: -1.5px;
+}
+header #filter-btn{
+    margin-left: 0;
+    margin-right: auto;
+    width: 4rem;
+    background-color: #f5f1c7;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #505050;
+    border-collapse: collapse;
+}
+header .select{
+    padding-left: 0.5rem;
+    width: 8rem;
+    border-radius: 10px;
+}
+header #reset-btn{
+    border-radius: 10px;
+    background-color: #ffcc8b;
+    width: 3rem;
+    margin-left: 0;
+    border : 1px solid #505050;
+}
+main{
+    margin: 10px 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .imgs{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 10px;
+    row-gap: 10px;
+    max-width: 700px;
+}
+main img{
+    width: 200px;
+    height: 200px;
+}
+main #more, #top{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 100px;
+    border-radius: 100%;
+    background-color: rgb(134, 249, 249);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+}
+main #more{
+    left: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+main #top{
+    right: 50px;
+    font-size: 3rem;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    height: 3rem;
+}
