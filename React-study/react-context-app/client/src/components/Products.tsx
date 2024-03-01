@@ -1,10 +1,17 @@
 import localHostPath from "../constant";
+import { UpdateItemCountType } from "../context/OrderContext";
 
 interface ItemType {
   name: string;
   imagePath: string;
+  updateItemCount: (itemName: string, newItemCount: string | number) => void;
 }
-const Products = ({ name, imagePath }: ItemType) => {
+const Products = ({ name, imagePath, updateItemCount }: ItemType) => {
+  const handleChange = (e: { target: { value: string } }) => {
+    const currentValue = e.target.value;
+    updateItemCount(name, currentValue);
+  };
+
   return (
     <div style={{ textAlign: "center" }}>
       <img
@@ -13,13 +20,17 @@ const Products = ({ name, imagePath }: ItemType) => {
         alt={`${name} product`}
       />
       <form style={{ marginTop: "10px" }}>
-        <label style={{ textAlign: "right" }}>{name}</label>
+        <label htmlFor={`${name}Quantity`} style={{ textAlign: "right" }}>
+          {name}
+        </label>
         <input
           type="number"
           style={{ marginLeft: 7 }}
           name="quantity"
+          id={`${name}Quantity`}
           min={0}
           defaultValue={0}
+          onChange={handleChange}
         />
       </form>
     </div>

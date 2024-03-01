@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.module.css";
 
 const SummaryPage = () => {
   const [checked, setChecked] = useState(false);
@@ -14,12 +15,12 @@ const SummaryPage = () => {
         </ul>
         <input
           type="checkbox"
-          name="check"
-          id="check"
+          name="confirmCheck"
+          id="confirmCheck"
           checked={checked}
           onChange={() => setChecked(!checked)}
         />
-        <label htmlFor="check"> 주문하려는 것을 확인하셨나요?</label>
+        <label htmlFor="confirmCheck"> 주문하려는 것을 확인하셨나요?</label>
         <button type="submit" disabled={!checked}>
           주문 확인
         </button>
