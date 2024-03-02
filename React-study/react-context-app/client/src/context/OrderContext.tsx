@@ -63,10 +63,15 @@ export function OrderContextProvider(props: PropsType): JSX.Element {
     ) {
       const newOrderCounts = { ...orderCounts };
       const orderCountMap = newOrderCounts[orderType];
-      orderCountMap.set(
-        itemName,
-        typeof newItemCount === "string" ? parseInt(newItemCount) : newItemCount
-      );
+      newItemCount != 0
+        ? orderCountMap.set(
+            itemName,
+            typeof newItemCount === "string"
+              ? parseInt(newItemCount)
+              : newItemCount
+          )
+        : orderCountMap.delete(itemName); //0이면 map요소 삭제
+
       setOrderCounts(newOrderCounts);
       updateTotalPrice(orderType);
     }

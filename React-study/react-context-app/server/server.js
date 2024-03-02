@@ -29,10 +29,10 @@ app.get("/options", (req, res) => {
 });
 
 let orderHistory = [];
-
+//post로 요청이 왔을때, [orderDatas, totalPrices] 저장하기
 app.post("/order", (req, res) => {
   const orderNumber = Math.floor(Math.random() * 1000000);
-  let order = { price: req.body.totals.total, orderNumber };
+  let order = { price: req.body[1].all, orderNumber };
   orderHistory.push(order);
   res.status(201).json(orderHistory);
 });

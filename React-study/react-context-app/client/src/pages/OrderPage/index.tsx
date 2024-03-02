@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import Type from "../../components/Type";
 import { ContextValueType, OrderContext } from "../../context/OrderContext";
+import React from "react";
 
-const OrderPage = () => {
+interface PropsType {
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const OrderPage = ({ setStep }: PropsType) => {
   const [_, totalPriceDatas, __, ___] = useContext<ContextValueType | []>(
     OrderContext
   );
@@ -19,7 +24,13 @@ const OrderPage = () => {
         </div>
         <div style={{ width: "50%" }}>
           <h2>Total Price: ₩{totalPriceDatas!.all}</h2>
-          <button>주문</button>
+          <button
+            onClick={() => {
+              setStep(1);
+            }}
+          >
+            주문
+          </button>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import localHostPath from "../constant";
-import { UpdateItemCountType } from "../context/OrderContext";
 
 interface ItemType {
   name: string;

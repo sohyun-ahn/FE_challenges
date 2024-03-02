@@ -1,0 +1,21 @@
+button {
+  display: block;
+  background-color: rgb(46, 45, 45);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+}
+button:disabled {
+  background-color: rgb(151, 148, 148);
+  border: none;
+  color: rgb(177, 177, 177);
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px 5px;
+}

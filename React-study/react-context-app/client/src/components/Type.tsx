@@ -42,10 +42,8 @@ const Type = ({ orderType }: PropsType) => {
     }
   };
 
-  console.log("orderData", orderDatas);
-  console.log("total", updateItemCount);
   const ItemComponent = orderType === "products" ? Products : Options;
-  console.log(orderType);
+
   const optionItems = items.map((item) => (
     <ItemComponent
       key={item.name}
