@@ -5,17 +5,17 @@ import remarkHtml from "remark-html";
 import { remark } from "remark";
 
 // workingdirectory/posts로 path.join
-const postsDirectiory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getSortedPostsData() {
   // /posts아래의 파일 이름 잡아주기
   // fileNames = ['pre-rendering.md', ...]
-  const fileNames = fs.readdirSync(postsDirectiory);
+  const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");
 
     // Read Markdown file as String
-    const fullPath = path.join(postsDirectiory, fileName);
+    const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf-8");
 
     // Use gray-matter to parse the post metadata section
@@ -38,7 +38,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectiory); //fileName들이 들어있음
+  const fileNames = fs.readdirSync(postsDirectory); //fileName들이 들어있음
 
   return fileNames.map((fileName) => {
     return {
@@ -50,7 +50,7 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectiory, `${id}.md`);
+  const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
 
   // Use gray-matter to parse the post metadata section
