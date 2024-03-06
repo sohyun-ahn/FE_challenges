@@ -1,0 +1,20 @@
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.content {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+.content ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+  max-width: 90%;
+  margin: 10px 30px;
+}
