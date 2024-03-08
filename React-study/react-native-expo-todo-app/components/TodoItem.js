@@ -3,10 +3,17 @@ import React from "react";
 import CheckboxChecked from "../assets/checkbox-checked.svg";
 import CheckboxUnchecked from "../assets/checkbox-unchecked.svg";
 import DeleteIcon from "../assets/delete.svg";
+import { useSelector, useDispatch } from "react-redux";
 
 // Pressable hitSlot: n => click할 수 있는 영역 n만큼 확장
 //           pressSlot: n => 클릭을 유지하는 범위 n만큼 확장
 const TodoItem = () => {
+  // 클릭시 작업지시서 전달.
+  const dispatch = useDispatch();
+  const isComplete = useSelector((state) => state.complete.isComplete);
+
+  //TODO: isComplete, handleClick(action 보내기), 우체부에게 전달
+
   return (
     <View style={styles.itemContainer}>
       <Pressable hitSlop={10} style={styles.itemCheckbox}>
