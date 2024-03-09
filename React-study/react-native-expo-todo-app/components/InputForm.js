@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   addFormContainer: {
     flexDirection: "row",
     marginTop: 15,
-    marginBottom: 20,
+    marginBottom: 30,
     paddingHorizontal: 20,
     backgroundColor: "#f7f8fa",
     alignItems: "center",

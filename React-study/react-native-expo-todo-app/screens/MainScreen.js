@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#f7f8fa",
   },
   pageTitle: {
-    fontSize: 35,
+    fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 20,
-    marginBottom: 30,
+    marginBottom: 20,
     paddingHorizontal: 15,
   },
   listView: {
