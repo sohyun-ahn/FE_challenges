@@ -10,6 +10,7 @@ import React from "react";
 
 // KeyboardAvoidingView : 키보드가 나타날때 감춰지는 부분없이 요소들이 나타나게 해주는 컨테이너
 const InputForm = () => {
+  const [todo, setTodo] = useState("");
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -18,16 +19,18 @@ const InputForm = () => {
       <TextInput
         style={styles.inputField}
         placeholder="할 일을 작성해주세요."
+        onChange={(e) => setTodo(e.target.value)}
       />
-      <Pressable
-        style={styles.addButton}
-        onPress={() => console.log("button pressed")}
-      >
+      <Pressable style={styles.addButton} onPress={() => addTodo(todo)}>
         <Text style={styles.addButtonText}>+</Text>
       </Pressable>
     </KeyboardAvoidingView>
   );
 };
+
+function addTodo(todo) {
+  return <TodoItem todo={todo} />;
+}
 
 export default InputForm;
 
