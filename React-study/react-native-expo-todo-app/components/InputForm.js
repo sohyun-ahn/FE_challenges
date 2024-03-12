@@ -6,11 +6,23 @@ import {
   StyleSheet,
   Text,
 } from "react-native";
-import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 // KeyboardAvoidingView : 키보드가 나타날때 감춰지는 부분없이 요소들이 나타나게 해주는 컨테이너
 const InputForm = () => {
   const [todo, setTodo] = useState("");
+
+  const dispatch = useDispatch();
+
+  function handleSubmit() {
+    if (todo !== "") {
+      const action = { type: "add_todo", payload: todo };
+      dispatch(action); // 우체부가 action을 reducer에 전달
+      setTodo("");
+    }
+  }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -19,18 +31,18 @@ const InputForm = () => {
       <TextInput
         style={styles.inputField}
         placeholder="할 일을 작성해주세요."
-        onChange={(e) => setTodo(e.target.value)}
+        value={todo}
+        onChangeText={setTodo}
+        onSubmitEditing={handleSubmit} // enter키로 submit가능하게 하는 것
       />
-      <Pressable style={styles.addButton} onPress={() => addTodo(todo)}>
+      <Pressable style={styles.addButton} onPress={handleSubmit}>
         <Text style={styles.addButtonText}>+</Text>
       </Pressable>
     </KeyboardAvoidingView>
   );
 };
 
-function addTodo(todo) {
-  return <TodoItem todo={todo} />;
-}
+function addTodo(todo) {}
 
 export default InputForm;
 

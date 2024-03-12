@@ -1,4 +1,6 @@
-import completeReducer from "./reducers/complete.reducer";
 import { configureStore } from "@reduxjs/toolkit";
+import todoReducer from "./reducers/todo.reducer";
 
-export const store = configureStore({ reducer: { complete: completeReducer } });
+export const store = configureStore({
+  reducer: { todo: todoReducer },
+});

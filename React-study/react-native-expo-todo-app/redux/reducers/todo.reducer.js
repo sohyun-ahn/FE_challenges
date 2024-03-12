@@ -1,10 +1,11 @@
 const todoReducer = (prevState = { currentId: 0, todos: [] }, action) => {
-  let newTodos = [];
+  const newTodos = [...prevState.todos];
+  let newId = prevState.currentId;
 
   switch (action.type) {
     case "add_todo": {
       newTodos.push({
-        id: prevState.currentId,
+        id: newId++,
         text: action.payload,
         state: "todo",
       });
@@ -12,22 +13,29 @@ const todoReducer = (prevState = { currentId: 0, todos: [] }, action) => {
 
     case "delete_todo": {
       // !!Error : A state mutation was detected inside a dispatch
-      const deletedTodo = prevState.todos.filter(
-        (todo) => todo.id !== action.payload
+      const deletingIndex = newTodos.findIndex(
+        (todo) => todo.id === action.payload
       );
-      newTodos = deletedTodo;
+      if (deletingIndex > -1) {
+        // 삭제해야할 Todo가 존재한다면
+        newTodos.splice(deletingIndex, 1);
+      }
     }
+
     case "update_todo": {
-      const updatedTodo = prevState.todos.map((todo) =>
-        todo.id === action.payload.id
-          ? { ...todo, state: action.payload.state } // state update: done->todo, todo->done
-          : todo
+      const updatingIndex = newTodos.findIndex(
+        (todo) => todo.id === action.payload.id
       );
-      newTodos = updatedTodo;
+      if (updatingIndex > -1) {
+        // 업데이트해야할 Todo가 존재한다면
+        const updatedTodo = { ...newTodos[updatingIndex] };
+        updatedTodo.state = action.payload.state; // state update: done->todo, todo->done
+        newTodos.splice(updatingIndex, 1, updatedTodo);
+      }
     }
   }
 
-  return { currentId: prevState.currentId++, todos: newTodos }; // 상태변경 후 다시 redux store에 새로운 상태 저장
+  return { currentId: newId, todos: newTodos }; // 상태변경 후 다시 redux store에 새로운 상태 저장
 };
 
 export default todoReducer;
