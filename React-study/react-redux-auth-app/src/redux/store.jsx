@@ -7,5 +7,8 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./reducers/auth.reducer";
+import { blogReducer } from "./reducers/blog.reducer";
 
-export const store = configureStore({ reducer: { auth: authReducer } }); // reducer: {key이름: reducer함수}
+export const store = configureStore({
+  reducer: { auth: authReducer, blog: blogReducer },
+}); // reducer: {key이름: reducer함수}
