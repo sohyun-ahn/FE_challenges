@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-function LogIn() {
+function Login() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); // 공장에서 상태 읽기 (provider안에서 사용해야함)
   const dispatch = useDispatch(); // 우체부 불러오기
 
@@ -36,4 +36,4 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+export default Login;

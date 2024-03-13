@@ -1,4 +1,4 @@
-import LogIn from "./components/LogIn";
+import LogIn from "./components/Login";
 import Blog from "./components/Blog";
 
 function App() {
