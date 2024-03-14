@@ -4,6 +4,8 @@ import axiosInstance from "../api/axios";
 import PlayButton from "./PlayButton";
 import AddWatchListButton from "./AddWatchListButton";
 
+export const BASE_URL = "https://image.tmdb.org/t/p/w500";
+
 const Banner = ({ fetchUrl }) => {
   const [movie, setMovie] = useState([]);
 
@@ -19,8 +21,6 @@ const Banner = ({ fetchUrl }) => {
     }
     fetchData();
   }, []);
-
-  const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
   return (
     <View style={styles.bannerContainer}>

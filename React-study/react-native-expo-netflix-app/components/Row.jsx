@@ -9,9 +9,9 @@ import {
 import { useState, useEffect } from "react";
 import axiosInstance from "../api/axios";
 
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Row = ({ title, fetchUrl, isLargeRow, openModal }) => {
   const [movies, setMovies] = useState([]);
-  console.log(isLargeRow);
+
   useEffect(() => {
     async function fetchData() {
       const response = await axiosInstance.get(fetchUrl);
@@ -26,7 +26,11 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       <Text style={styles.row__title}>{title}</Text>
       <ScrollView horizontal contentContainerStyle={styles.row__posters}>
         {movies.map((movie) => (
-          <Pressable key={movie.id} style={styles.poster}>
+          <Pressable
+            key={movie.id}
+            style={styles.poster}
+            onPress={() => openModal(movie)}
+          >
             <Image
               source={{
                 uri: `https://image.tmdb.org/t/p/w500${
