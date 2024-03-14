@@ -27,8 +27,6 @@ const TodoItem = ({ todo }) => {
     dispatch(action);
   }
 
-  //TODO: isComplete, handleClick(action 보내기), 우체부에게 전달
-
   return (
     <View style={styles.itemContainer}>
       <Pressable hitSlop={10} style={styles.itemCheckbox} onPress={handleClick}>

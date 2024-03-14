@@ -6,11 +6,15 @@ import {
   StatusBar,
   Platform,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import InputForm from "../components/InputForm";
 import TodoItem from "../components/TodoItem";
 import React from "react";
 import { useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import { useNavigation } from "@react-navigation/native";
 
 // View : container역할
 // SafeAreaView : iOS v11이상이 설치된 기기에 적용됨, 안전 영역 경계 내에서 콘텐츠 렌더링
@@ -18,11 +22,26 @@ const MainScreen = () => {
   const todos = useSelector((state) => state.todo.todos);
   const todoTasks = todos.filter((todo) => todo.state === "todo");
   const completedTasks = todos.filter((todo) => todo.state === "done");
+  const navigation = useNavigation();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // firebase가 로그아웃시킴
+      navigation.replace("Login"); // 로그인화면으로 전환
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.pageTitle}>TODO APP</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.pageTitle}>TODO APP</Text>
+        <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+          <Text style={styles.logoutText}>LOG OUT</Text>
+        </TouchableOpacity>
+      </View>
       <View style={styles.listView}>
         <Text style={styles.listTitle}>할 일</Text>
         {todoTasks.length !== 0 ? (
@@ -66,6 +85,13 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "ios" ? 0 : 20, // iOS에서는 이미 safeAreaView로 처리함
     backgroundColor: "#f7f8fa",
   },
+  titleContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: 15,
+  },
   pageTitle: {
     fontSize: 40,
     fontWeight: "bold",
@@ -73,7 +99,32 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     paddingHorizontal: 15,
+    width: "70%",
   },
+  logoutButton: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: 50,
+    height: 50,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#aaa",
+    backgroundColor: "#453b42",
+    shadowColor: "#453b4240",
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+  },
+  logoutText: {
+    color: "#fff",
+    fontSize: 11,
+    fontWeight: "bold",
+    padding: 5,
+  },
+
   listView: {
     flex: 1,
     borderRadius: 5,
