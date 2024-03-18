@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./screens/HomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+import HomeScreen from "./screens/HomeScreen";
 import RestaurantScreen from "./screens/RestaurantScreen";
 import PreparingOrderScreen from "./screens/PreparingOrderScreen";
 import DeliveryScreen from "./screens/DeliveryScreen";
@@ -13,7 +12,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigatior initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Restaurant" component={RestaurantScreen} />
         <Stack.Screen
@@ -22,16 +21,16 @@ const Navigation = () => {
           options={{ presentation: "modal", headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
+          name="PreparingOrder"
           component={PreparingOrderScreen}
           options={{ presentation: "fullScreenModal", headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
+          name="Delivery"
           component={DeliveryScreen}
           options={{ presentation: "fullScreenModal", headerShown: false }}
         />
-      </Stack.Navigatior>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
