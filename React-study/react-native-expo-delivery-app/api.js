@@ -2,7 +2,7 @@
 import sanityClient from "./sanity_client";
 let sanityQuery = (query, params) => sanityClient.fetch(query, params);
 
-export const getFeaturedRestaurant = () => {
+export const getFeaturedRestaurants = () => {
   // sanity서버에서 vision부분에 쿼리 내용을 적은 것
   return sanityQuery(`*[_type=='featured'] {
         ..., 
@@ -21,14 +21,15 @@ export const getCategories = () => {
 
 export const getFeaturedRestaurantById = (id) => {
   return sanityQuery(
-    `*[_type=='featured'] {
+    `*[_type=='featured' &&_id==$id] {
         ..., 
         restaurants[]-> {
           ..., dishes[]->{
             name
           }
         }
-      }`,
+      }[0]
+      `,
     { id }
   );
 };

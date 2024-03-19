@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import ImageUrlBuilder from "@sanity/image-url";
+import imageUrlBuilder from "@sanity/image-url";
 
 const client = createClient({
   // 데이터를 가져오고 수정하고 할 수 있는 객체 생성
@@ -10,9 +10,9 @@ const client = createClient({
 });
 
 // helper function to build image urls
-const builder = ImageUrlBuilder(client);
+const builder = imageUrlBuilder(client);
 
-export const urlFor = (source) => builder.image(source).url(); // urlFor이라는 함수 만들어 이것을 이용하여 우리가 sanity로 데이터 생성했던 것들의 image url들을 받을 수 있음.
+export const urlFor = (source) => builder.image(source); // urlFor이라는 함수 만들어 이것을 이용하여 우리가 sanity로 데이터 생성했던 것들의 image url들을 받을 수 있음.
 
 export default client;
 

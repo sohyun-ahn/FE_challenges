@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 
 const BasketIcon = () => {
@@ -10,5 +10,3 @@ const BasketIcon = () => {
 };
 
 export default BasketIcon;
-
-const styles = StyleSheet.create({});
