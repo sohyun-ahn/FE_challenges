@@ -24,6 +24,9 @@ export const restaurantSlice = createSlice({
   },
 });
 
+// Selectors
+export const selectRestaurant = (state) => state.restaurant.restaurant;
+
 // Action creators are generated for each case reducer function
 export const { setRestaurant } = restaurantSlice.actions;
 
