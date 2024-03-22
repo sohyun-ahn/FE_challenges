@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
-import React from "react";
+import {View, Text, SafeAreaView} from 'react-native';
+import React from 'react';
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <SafeAreaView className="bg-slate-500">
+      <Text>나의 Profile</Text>
+    </SafeAreaView>
   );
 };
 
