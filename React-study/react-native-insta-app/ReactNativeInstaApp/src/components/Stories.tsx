@@ -1,57 +1,12 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-  ImageRequireSource,
-} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-
-interface StoryType {
-  id: number;
-  name: string;
-  image: ImageRequireSource;
-}
-
-// story data 하드코딩
-const storyInfo: StoryType[] = [
-  {
-    id: 0,
-    name: '나의 스토리',
-    image: require('../../assets/images/userProfile.jpeg'),
-  },
-  {
-    id: 1,
-    name: 'Daniel',
-    image: require('../../assets/images/profile1.jpeg'),
-  },
-  {
-    id: 2,
-    name: 'Mangom',
-    image: require('../../assets/images/profile2.jpeg'),
-  },
-  {
-    id: 3,
-    name: 'Lemon',
-    image: require('../../assets/images/profile3.jpeg'),
-  },
-  {
-    id: 4,
-    name: 'Goguma',
-    image: require('../../assets/images/profile4.jpeg'),
-  },
-  {
-    id: 5,
-    name: 'Rabbit',
-    image: require('../../assets/images/profile5.jpeg'),
-  },
-];
+import {storyData} from '../DB/storyData';
 
 const Stories = () => {
   const navigation = useNavigation<[{}]>();
+  const storyInfo = storyData;
   return (
     // ScrollView를 통해 좌우로 이동가능하게 함.
     <ScrollView
