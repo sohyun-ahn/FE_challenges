@@ -6,25 +6,19 @@ import {
   TouchableOpacity,
   Animated,
   Platform,
-  ImageRequireSource,
 } from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
-import {NavigationProp, NavigationState} from '@react-navigation/native';
+import {PropsType} from './propsType';
+import {StoryType} from '../DB/storyData';
 
-interface PropsType {
-  route: {params: {name: string; image: ImageRequireSource}};
-  navigation: Omit<
-    NavigationProp<ReactNavigation.RootParamList>,
-    'getState'
-  > & {
-    getState(): NavigationState | undefined;
-  };
+interface StatusPropsType extends PropsType {
+  route: {params: StoryType};
 }
 
-const Status = ({route, navigation}: PropsType) => {
+const Status = ({route, navigation}: StatusPropsType) => {
   const {name, image} = route.params; // Stories.tsx에서 보내준 {name, image} 받기
   const statusBarHeight = getStatusBarHeight() + 10;
 
