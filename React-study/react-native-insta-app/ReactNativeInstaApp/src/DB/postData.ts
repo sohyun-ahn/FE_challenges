@@ -39,7 +39,7 @@ export const postsData: PostType[] = [
     isLiked: false,
   },
   {
-    postTitle: 'Mangom',
+    postTitle: 'Goguma',
     postPersonImage: require('../../assets/images/profile2.jpeg'),
     postImage: require('../../assets/images/post5.jpeg'),
     likes: 800,

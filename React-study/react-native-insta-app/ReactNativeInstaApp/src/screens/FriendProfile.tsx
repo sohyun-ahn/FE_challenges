@@ -16,7 +16,10 @@ interface FriendProfilePropsType extends PropsType {
   route: {params: FriendsProfileDataType};
 }
 
-const FriendProfile = ({route, navigation}: FriendProfilePropsType) => {
+const FriendProfile = ({
+  route,
+  navigation,
+}: FriendProfilePropsType): React.JSX.Element => {
   const name = route.params.name;
 
   return (
