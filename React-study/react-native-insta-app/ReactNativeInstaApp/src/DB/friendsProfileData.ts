@@ -2,6 +2,7 @@ import {ImageRequireSource} from 'react-native';
 
 // Friends Profile Data
 export interface FriendsProfileDataType {
+  id?: number;
   name: string;
   accountName: string;
   profileImage: ImageRequireSource;
@@ -10,6 +11,17 @@ export interface FriendsProfileDataType {
   followers: number | string;
   following: number | string;
 }
+
+export const MyProfileData: FriendsProfileDataType = {
+  id: 0,
+  name: 'Sohyun',
+  accountName: 'sohyun._.ahn',
+  profileImage: require('../../assets/images/userProfile.jpeg'),
+  follow: true,
+  posts: 10,
+  followers: 110,
+  following: 109,
+};
 
 export const FriendsProfileData: FriendsProfileDataType[] = [
   {

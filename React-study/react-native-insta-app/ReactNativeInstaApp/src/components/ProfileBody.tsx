@@ -1,12 +1,7 @@
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
-import {
-  FriendsProfileData,
-  FriendsProfileDataType,
-} from '../DB/friendsProfileData';
+import {FriendsProfileDataType} from '../DB/friendsProfileData';
 import Feather from 'react-native-vector-icons/Feather';
-import ProfileButton from './ProfileButton';
-import FriendItem from './FriendItem';
 
 const ProfileBody = (props: {data: FriendsProfileDataType}) => {
   const {name, accountName, profileImage, posts, followers, following} =
@@ -67,24 +62,6 @@ const ProfileBody = (props: {data: FriendsProfileDataType}) => {
           <Text>Following</Text>
         </View>
       </View>
-
-      {/* id==0이면 내프로필 => 프로필 수정 버튼, id==1이면 다른사람프로필 => 팔로우, 메시지 버튼*/}
-      <ProfileButton id={1} data={props.data} />
-
-      {/* 회원님을 위한 추천 UI */}
-      <Text className="py-[10] text-[15px] font-bold">회원님을 위한 추천</Text>
-      <ScrollView
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        className="pt-[10]">
-        {FriendsProfileData.map((data, index) =>
-          data.name === name ? null : (
-            <>
-              <FriendItem key={index} data={data} name={name} />
-            </>
-          ),
-        )}
-      </ScrollView>
     </View>
   );
 };
