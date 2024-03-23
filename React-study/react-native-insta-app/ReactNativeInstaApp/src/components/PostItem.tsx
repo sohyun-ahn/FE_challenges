@@ -1,6 +1,6 @@
 import {View, Image, Text, TouchableOpacity, TextInput} from 'react-native';
 import React, {useState} from 'react';
-import {PostType} from './Posts';
+import {PostType} from '../DB/postData';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionic from 'react-native-vector-icons/Ionicons';
