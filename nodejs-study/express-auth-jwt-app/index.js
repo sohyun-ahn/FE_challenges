@@ -1,5 +1,6 @@
 const express = require("express"); // middleware로 이루어져있음
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const port = 4000;
@@ -84,5 +85,16 @@ app.get("/refresh", (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwt) return res.sendStatus(401);
 
-  const refreshToken = cookies.jwt;
+  const refreshToken = cookies.jwt; // cookie-parser 덕에 가져올 수 있음
+  if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403); // refreshToken이 데이터베이스에 있는 토큰인지 확인
+
+  // token이 유효한 토큰인지 확인
+  jwt.verify(refreshToken, refreshSecretText, (err, user) => {
+    if (err) return res.status(403).json({ error: "Invalid token" });
+    // 새로운 access token 생성
+    const accessToken = jwt.sign({ name: user.name }, secretText, {
+      expiresIn: "30s",
+    });
+    res.json({ accessToken: accessToken });
+  });
 });
