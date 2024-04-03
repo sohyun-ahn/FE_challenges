@@ -1,0 +1,28 @@
+<section class="prompt">
+  <h1>Sign up</h1>
+  <form action="/signup" method="post">
+    <section>
+      <label for="email">Email</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        required
+        autocomplete="email"
+      />
+    </section>
+    <section>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        autocomplete="new-password"
+      />
+    </section>
+    <input type="hidden" />
+    <button type="submit">Sign up</button>
+  </form>
+  <p>Already have an account? <a href="/login">Sign in</a></p>
+</section>
